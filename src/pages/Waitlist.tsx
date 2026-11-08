@@ -23,7 +23,7 @@ export default function Waitlist() {
     try {
       // FormSubmit emails each submission to this address (https://formsubmit.co).
       // The first submission sends an activation email that must be confirmed.
-      const res = await fetch('https://formsubmit.co/ajax/mavrikistavli@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/mavrikisdesigns@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -113,7 +113,7 @@ export default function Waitlist() {
             {error && (
               <p className="text-sm text-red-400/80">
                 Something went wrong sending your request. Please try again, or
-                email us at mavrikistavli@gmail.com.
+                email us at mavrikisdesigns@gmail.com.
               </p>
             )}
 

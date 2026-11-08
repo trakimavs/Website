@@ -34,7 +34,7 @@ export const boards: Board[] = [
     material: 'Kiaat wood, emerald and pearl, resin pieces, Mavrikis Designs',
     year: 2025,
     edition: 'Heritage Board',
-    images: ['/Website/images/board-emerald-1.jpg', '/Website/images/board-emerald-2.jpg'],
+    images: ['/images/board-emerald-1.jpg', '/images/board-emerald-2.jpg'],
     available: false,
   },
   {
@@ -48,9 +48,9 @@ export const boards: Board[] = [
     year: 2025,
     edition: 'Signature Heritage',
     images: [
-      '/Website/images/board-greek-cross-1.jpg',
-      '/Website/images/board-greek-cross-2.jpg',
-      '/Website/images/board-greek-cross-3.jpg',
+      '/images/board-greek-cross-1.jpg',
+      '/images/board-greek-cross-2.jpg',
+      '/images/board-greek-cross-3.jpg',
     ],
     available: false,
   },
@@ -64,7 +64,7 @@ export const boards: Board[] = [
     material: 'Kiaat wood, gold & pearl resin, brass fittings',
     year: 2025,
     edition: 'Signature Heritage',
-    images: ['/Website/images/board-cyprus-1.jpg', '/Website/images/board-cyprus-2.jpg'],
+    images: ['/images/board-cyprus-1.jpg', '/images/board-cyprus-2.jpg'],
     available: false,
   },
   {
@@ -78,9 +78,9 @@ export const boards: Board[] = [
     year: 2025,
     edition: 'Signature Heritage',
     images: [
-      '/Website/images/board-aegean-1.jpg',
-      '/Website/images/board-ic-xc-nika-2.jpg',
-      '/Website/images/board-ic-xc-nika-3.jpg',
+      '/images/board-aegean-1.jpg',
+      '/images/board-ic-xc-nika-2.jpg',
+      '/images/board-ic-xc-nika-3.jpg',
     ],
     available: false,
   },
@@ -94,7 +94,7 @@ export const boards: Board[] = [
     material: 'Figured walnut, jade & ivory resin, brass hardware',
     year: 2026,
     edition: 'Signature Heritage',
-    images: ['/Website/images/board-jade-1.jpg', '/Website/images/board-jade-2.jpg'],
+    images: ['/images/board-jade-1.jpg', '/images/board-jade-2.jpg'],
     available: false,
   },
 ]

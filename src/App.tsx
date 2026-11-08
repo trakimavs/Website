@@ -11,7 +11,7 @@ import Studio from './pages/Studio'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Website">
+    <BrowserRouter>
       <ScrollToTop />
       <Nav />
       <Routes>

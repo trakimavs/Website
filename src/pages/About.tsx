@@ -12,7 +12,7 @@ export default function About() {
 
         <div className="w-full mb-16 overflow-hidden">
           <img
-            src="/Website/images/board-aegean-1.jpg"
+            src="/images/board-aegean-1.jpg"
             alt="The IC XC NIKA board, cross engraving in figured Kiaat"
             className="w-full object-cover"
             style={{ aspectRatio: '3/2', objectPosition: 'center 30%' }}
@@ -37,7 +37,7 @@ export default function About() {
           </p>
           <figure className="my-6">
             <img
-              src="/Website/images/pappou-board.jpg"
+              src="/images/pappou-board.jpg"
               alt="Pappou's handmade tavli board, open, with worn inlaid points and old red, black, cream and brown checkers"
               className="w-full object-cover"
               loading="lazy"

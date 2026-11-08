@@ -12,7 +12,7 @@ export default function About() {
 
         <div className="w-full mb-16 overflow-hidden">
           <img
-            src="/Website/images/board-aegean-1.jpg"
+            src="/images/board-aegean-1.jpg"
             alt="The Aegean Blue board, ICXC NIKA engraving in figured walnut"
             className="w-full object-cover"
             style={{ aspectRatio: '3/2', objectPosition: 'center 30%' }}

@@ -9,7 +9,7 @@ import Waitlist from './pages/Waitlist'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Website">
+    <BrowserRouter>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

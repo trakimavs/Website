@@ -20,7 +20,7 @@ export const boards: Board[] = [
     material: 'Walnut, emerald resin, hand-turned pieces',
     year: 2025,
     edition: 'Signature piece',
-    images: ['/Website/images/board-emerald-1.jpg', '/Website/images/board-emerald-2.jpg'],
+    images: ['/images/board-emerald-1.jpg', '/images/board-emerald-2.jpg'],
     available: false,
   },
   {
@@ -32,7 +32,7 @@ export const boards: Board[] = [
     material: 'Dark walnut, black & silver resin, brass fittings',
     year: 2024,
     edition: 'Custom, each board unique',
-    images: ['/Website/images/board-noir-1.jpg', '/Website/images/board-noir-2.jpg'],
+    images: ['/images/board-noir-1.jpg', '/images/board-noir-2.jpg'],
     available: true,
   },
   {
@@ -45,9 +45,9 @@ export const boards: Board[] = [
     year: 2025,
     edition: 'One of one',
     images: [
-      '/Website/images/board-greek-cross-1.jpg',
-      '/Website/images/board-greek-cross-2.jpg',
-      '/Website/images/board-greek-cross-3.jpg',
+      '/images/board-greek-cross-1.jpg',
+      '/images/board-greek-cross-2.jpg',
+      '/images/board-greek-cross-3.jpg',
     ],
     available: false,
   },
@@ -60,7 +60,7 @@ export const boards: Board[] = [
     material: 'Walnut, emerald & ivory resin, brass fittings',
     year: 2025,
     edition: 'One of one',
-    images: ['/Website/images/board-cyprus-1.jpg', '/Website/images/board-cyprus-2.jpg'],
+    images: ['/images/board-cyprus-1.jpg', '/images/board-cyprus-2.jpg'],
     available: false,
   },
   {
@@ -72,7 +72,7 @@ export const boards: Board[] = [
     material: 'Olive wood, sage & pearl resin, brass fittings',
     year: 2025,
     edition: 'Commission piece',
-    images: ['/Website/images/board-spartan-1.jpg'],
+    images: ['/images/board-spartan-1.jpg'],
     available: false,
   },
   {
@@ -84,7 +84,7 @@ export const boards: Board[] = [
     material: 'Figured walnut, jade & ivory resin, brass hardware',
     year: 2026,
     edition: 'Commission, 2 of 2',
-    images: ['/Website/images/board-jade-1.jpg', '/Website/images/board-jade-2.jpg'],
+    images: ['/images/board-jade-1.jpg', '/images/board-jade-2.jpg'],
     available: true,
   },
 ]

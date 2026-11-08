@@ -113,8 +113,9 @@
   .form input:focus,.form textarea:focus{outline:none;border-color:rgba(201,168,76,.6)}
   .form textarea{min-height:76px;resize:vertical}
 
-  .modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:grid;place-items:center;z-index:50;padding:20px}
-  .modal .box{background:var(--charcoal);border:1px solid rgba(201,168,76,.3);padding:22px;max-width:min(900px,96vw);max-height:92vh;overflow:auto;color:var(--ivory)}
+  /* Flex + margin:auto centres short dialogs but lets tall ones scroll from their top (phones) */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:50;padding:16px}
+  .modal .box{margin:auto;background:var(--charcoal);border:1px solid rgba(201,168,76,.3);padding:22px;width:100%;max-width:min(900px,96vw);color:var(--ivory)}
   .modal .box > b{font:400 22px/1.2 var(--display);display:block}
   .modal img{max-width:100%;display:block;margin:12px 0}
   .modal ol{padding-left:18px;margin:12px 0;color:var(--ivory-muted)}
@@ -627,7 +628,7 @@ function submitOrder(){
   $('mailLink').href=`mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   $('logoAttach').style.display = (state.tier==='signature' && state.logo==='upload')? '' : 'none';
   $('copyOrder').textContent='Copy order text';
-  $('sendModal').classList.remove('hidden');
+  $('sendModal').classList.remove('hidden'); $('sendModal').scrollTop=0;
 }
 function setLogoSource(kind){
   state.logo=kind;
@@ -652,8 +653,17 @@ function readLogo(file){
 }
 async function save(fmt){
   const type = fmt==='png'? 'image/png' : 'image/jpeg';
-  const blob = await new Promise(res=>view.toBlob(res,type,0.95));
   const name = 'mavrikis-tavli.'+fmt;
+  // Built synchronously so the phone still treats the tap as the user's action when the share sheet opens
+  const url64 = view.toDataURL(type,0.95), bin = atob(url64.split(',')[1]), u8 = new Uint8Array(bin.length);
+  for (let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
+  const blob = new Blob([u8],{type});
+  // Phones: open the share sheet (Save Image to Photos, Mail, WhatsApp...) instead of a file download
+  const file = new File([blob],name,{type});
+  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && navigator.canShare && navigator.canShare({files:[file]})){
+    try{ await navigator.share({files:[file], title:'My Mavrikis tavli design'}); status('Design image ready to attach.'); return; }
+    catch(e){ if (e && e.name==='AbortError') return; }
+  }
   // On your own website (outside Claude) a normal browser download works
   if (!window.claude){
     const url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url; a.download=name;

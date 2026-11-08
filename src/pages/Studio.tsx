@@ -7,6 +7,7 @@ export default function Studio() {
       <iframe
         src={`${import.meta.env.BASE_URL}tavli-studio.html`}
         title="Tavli Board Studio"
+        allow="web-share; clipboard-write"
         className="block w-full border-0 bg-obsidian"
         style={{ height: 'calc(100dvh - 5rem)' }}
       />

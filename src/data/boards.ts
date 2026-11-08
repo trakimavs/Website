@@ -37,11 +37,11 @@ export const boards: Board[] = [
   },
   {
     id: 'greek-cross',
-    name: 'The Greek Cross',
-    tagline: 'Light walnut, cobalt and pearl resin, Greek coat of arms',
+    name: 'Signature Heritage | Hellas',
+    tagline: 'Kiaat wood, blue and white resin, custom Hellas and wreath engraving',
     description:
       'The Greek coat of arms (laurel wreath, cross, full crest) is laser-engraved into the playing surface of both halves. Cobalt blue and pearl resin points in a paired rhythm. This board was made for someone who wanted to carry a piece of Greece wherever they played. It comes with a leather carry handle and matching piece bag.',
-    material: 'Light walnut, cobalt & pearl resin, leather handle',
+    material: 'Kiaat wood, Blue and white, matching resin pieces, custom Hellas and Wreath engraving',
     year: 2025,
     edition: 'One of one',
     images: [

@@ -251,24 +251,14 @@
         <textarea id="fNotes" placeholder="Notes or special requests"></textarea>
         <div class="row" style="margin-top:4px"><button class="btn primary" type="submit" id="submit">Submit</button><span class="muted" id="formMsg"></span></div>
       </form>
+      <div id="thanks" class="hidden">
+        <p style="font:400 26px/1.2 var(--display);margin:4px 0 8px">Thank you.</p>
+        <p class="muted" style="margin:0;font-size:14px">We've received your design and we'll be in touch.</p>
+      </div>
+      <iframe name="orderPost" id="orderPost" title="Order submission" style="display:none"></iframe>
     </section>
   </aside>
 </div>
-<div class="modal hidden" id="sendModal"><div class="box" style="max-width:560px">
-  <b>Send your order to Mavrikis Designs</b>
-  <ol>
-    <li>Tap <b>Open email</b>. Your order is already written; just press send.</li>
-    <li>Tap <b>Save design image</b> and attach it to the email<span id="logoAttach">, along with your logo file</span>.</li>
-  </ol>
-  <div class="btns">
-    <a class="btn primary" id="mailLink" target="_blank" rel="noopener">Open email</a>
-    <button class="btn" id="saveImg">Save design image</button>
-    <button class="btn" id="copyOrder">Copy order text</button>
-  </div>
-  <p class="muted" style="margin:12px 0 0">If your email app doesn't open, copy the order and email it to <b>mavrikisdesigns@gmail.com</b> with the subject <b id="subjText"></b>.</p>
-  <textarea readonly id="orderText"></textarea>
-  <div class="btns"><button class="btn" id="sendClose">Close</button></div>
-</div></div>
 <div class="modal hidden" id="modal"><div class="box">
   <b>Save your board</b>
   <div class="muted">Right-click (or long-press on a phone) the image and choose “Save image”.</div>
@@ -589,13 +579,8 @@ function bindUI(){
   $('dlPng').onclick=()=>save('png'); $('dlJpg').onclick=()=>save('jpg');
   $('modalClose').onclick=()=>$('modal').classList.add('hidden');
   $('orderForm').onsubmit=e=>{ e.preventDefault(); submitOrder(); };
-  $('sendClose').onclick=()=>$('sendModal').classList.add('hidden');
-  $('saveImg').onclick=()=>save('png');
-  $('copyOrder').onclick=async()=>{ const ta=$('orderText');
-    try{ await navigator.clipboard.writeText(ta.value); $('copyOrder').textContent='Copied ✓'; }
-    catch(err){ ta.focus(); ta.select(); $('copyOrder').textContent='Selected: press copy'; } };
 }
-let comparing=false, origView=null, logoFileName='';
+let comparing=false, origView=null, logoFileName='', logoFileObj=null;
 function colourName(hex){ if (NAMES[hex]) return NAMES[hex]; const p=PRESETS.find(([n,h])=>h.toLowerCase()===hex.toLowerCase()); return p? p[0] : 'Custom colour '+hex.toUpperCase(); }
 function orderSummary(){
   const T=TIERS[state.tier], L=[];
@@ -618,17 +603,36 @@ function submitOrder(){
   const name=$('fName').value.trim(), email=$('fEmail').value.trim(), phone=$('fPhone').value.trim(), notes=$('fNotes').value.trim();
   const miss=[]; if(!name) miss.push('name'); if(!/^\S+@\S+\.\S+$/.test(email)) miss.push('a valid email'); if(phone.replace(/\D/g,'').length<9) miss.push('a phone number');
   if (miss.length){ $('formMsg').textContent='Please add '+miss.join(', ')+'.'; return; }
-  $('formMsg').textContent='';
-  const subject=`LEAD: Website Generation - ${name}`;
-  const body=['New tavli board design from the Mavrikis Designs website.','',
-    ...orderSummary(),'',`Name: ${name}`,`Email: ${email}`,`Phone: ${phone}`, `Notes: ${notes||'None'}`,'',
-    'Design image: attached by the customer (saved from the configurator).'].join('\n');
-  $('orderText').value=`To: ${ORDER_EMAIL}\nSubject: ${subject}\n\n${body}`;
-  $('subjText').textContent=subject;
-  $('mailLink').href=`mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  $('logoAttach').style.display = (state.tier==='signature' && state.logo==='upload')? '' : 'none';
-  $('copyOrder').textContent='Copy order text';
-  $('sendModal').classList.remove('hidden'); $('sendModal').scrollTop=0;
+  $('formMsg').textContent='Sending…'; $('submit').disabled=true;
+  const fields = {
+    _subject:`LEAD: Website Generation - ${name}`, _template:'table', _captcha:'false',
+    Name:name, email:email, Phone:phone, Notes:notes||'None',
+    Order: orderSummary().join('\n'),
+  };
+  // Design image (JPEG keeps it well under FormSubmit's 10 MB limit) plus the customer's own logo, if any
+  const files = [];
+  const url64=view.toDataURL('image/jpeg',0.9), bin=atob(url64.split(',')[1]), u8=new Uint8Array(bin.length);
+  for (let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
+  files.push(['design', new File([u8], `design-${name.replace(/[^\w-]+/g,'_')}.jpg`, {type:'image/jpeg'})]);
+  if (state.tier==='signature' && state.logo==='upload' && logoFileObj && logoFileObj.size < 8e6) files.push(['logo', logoFileObj]);
+
+  const f=document.createElement('form');
+  f.method='POST'; f.enctype='multipart/form-data'; f.target='orderPost'; f.style.display='none';
+  f.action='https://formsubmit.co/'+ORDER_EMAIL;
+  for (const [k,v] of Object.entries(fields)){
+    const el=document.createElement(k==='Order'?'textarea':'input'); el.name=k; el.value=v; f.appendChild(el);
+  }
+  for (const [k,file] of files){
+    const el=document.createElement('input'); el.type='file'; el.name=k;
+    try{ const dt=new DataTransfer(); dt.items.add(file); el.files=dt.files; f.appendChild(el); }catch(e){}
+  }
+  document.body.appendChild(f);
+  let done=false;
+  const finish=()=>{ if(done) return; done=true; f.remove();
+    $('orderForm').classList.add('hidden'); $('thanks').classList.remove('hidden'); };
+  $('orderPost').onload=finish;
+  setTimeout(finish, 15000);
+  f.submit();
 }
 function setLogoSource(kind){
   state.logo=kind;
@@ -645,7 +649,7 @@ function readLogo(file){
       const p=pixels(img, Math.min(200,img.naturalWidth), Math.min(200,img.naturalHeight)); let tr=0, n=p.length/4;
       for (let i=0;i<n;i++) if (p[i*4+3]<128) tr++;
       state.src = tr/n>0.1? 'shape' : 'dark'; state.mode='line'; state.cut=0.5; state.size=190;
-      $('logoThumb').style.backgroundImage=`url(${r.result})`; $('logoName').textContent='Current: '+file.name; logoFileName=file.name;
+      $('logoThumb').style.backgroundImage=`url(${r.result})`; $('logoName').textContent='Current: '+file.name; logoFileName=file.name; logoFileObj=file;
       syncUI(); schedule(true);
     }catch(err){ status('That file could not be read as an image.'); }
   };

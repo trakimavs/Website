@@ -35,6 +35,17 @@ export default function About() {
             grew up with, and for a long time I assumed every tavli board was
             made that way.
           </p>
+          <figure className="my-6">
+            <img
+              src="/Website/images/pappou-board.jpg"
+              alt="Pappou's handmade tavli board, open, with worn inlaid points and old red, black, cream and brown checkers"
+              className="w-full object-cover"
+              loading="lazy"
+            />
+            <figcaption className="mt-3 text-ivory/40 text-sm italic">
+              Pappou's board.
+            </figcaption>
+          </figure>
           <p className="font-light text-ivory/70 text-lg leading-relaxed">
             When I went looking for one of my own, I found objects that looked
             like tavli boards from a distance, but were far from the real deal.
@@ -51,11 +62,6 @@ export default function About() {
           <p className="font-display text-xl text-ivory/90 leading-relaxed italic">
             If you've been looking for the real thing, this is what I make.
           </p>
-        </div>
-
-        <div className="border-t border-white/5 pt-12">
-          <p className="section-label mb-6">Exhibitions & Press</p>
-          <p className="text-ivory/30 text-sm italic">To be added</p>
         </div>
 
         <div className="mt-16">

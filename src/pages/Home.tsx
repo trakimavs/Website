@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { boards, soldLabel } from '../data/boards'
 
-const FEATURED_IDS = ['emerald', 'noir-argent', 'greek-cross']
+const FEATURED_IDS = ['emerald', 'greek-cross', 'the-cyprus']
 const featured = boards.filter((b) => FEATURED_IDS.includes(b.id))
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         {/* Hero background image */}
         <img
-          src="/Website/images/board-noir-2.jpg"
+          src="/Website/images/board-ic-xc-nika-3.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"

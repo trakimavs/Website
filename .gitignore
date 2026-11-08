@@ -3,6 +3,7 @@ node_modules/
 
 # Website build output (GitHub Actions rebuilds it on every push)
 dist/
+dist-ssr/
 *.tsbuildinfo
 
 # Claude / AI assistant files

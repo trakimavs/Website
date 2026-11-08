@@ -34,7 +34,7 @@ export default function Home() {
             <em className="text-gold not-italic">to outlast you</em>
           </h1>
           <p className="text-ivory/50 font-light text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
-            Each Mavrikis Tavli board is a singular object: carved, fitted,
+            Each Mavrikis Tavli (backgammon) board is a singular object: carved, fitted,
             and finished by one pair of hands. Not a production run. Not a
             reproduction. A board.
           </p>
@@ -82,7 +82,7 @@ export default function Home() {
               <div className="aspect-square w-full overflow-hidden">
                 <img
                   src={board.images[0]}
-                  alt={board.name}
+                  alt={`${board.name}, handmade Tavli board`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

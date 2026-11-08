@@ -9,7 +9,7 @@ export default function Footer() {
           <span className="font-display text-base tracking-widest text-ivory">MAVRIKIS DESIGNS</span>
         </div>
         <p className="text-xs text-ivory/30 tracking-wide">
-          Handcrafted Tavli boards, made one at a time
+          Handcrafted Tavli (backgammon) boards, made one at a time in South Africa
         </p>
         <a
           href="https://www.instagram.com/mavrikisdesigns/"

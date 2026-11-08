@@ -52,7 +52,7 @@ export default function BoardDetail() {
             >
               <img
                 src={board.images[activeImage]}
-                alt={`${board.name}, image ${activeImage + 1}`}
+                alt={`${board.name}, handmade Tavli board, photo ${activeImage + 1}`}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
             </button>

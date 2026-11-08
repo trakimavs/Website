@@ -40,6 +40,7 @@ export default function Nav() {
             { to: '/collection', label: 'Collection' },
             { to: '/about', label: 'The Craft' },
             { to: '/waitlist', label: 'Waitlist' },
+            { to: '/studio', label: 'Studio' },
           ].map(({ to, label }) => (
             <li key={to}>
               <Link
@@ -75,6 +76,7 @@ export default function Nav() {
             { to: '/collection', label: 'Collection' },
             { to: '/about', label: 'The Craft' },
             { to: '/waitlist', label: 'Waitlist' },
+            { to: '/studio', label: 'Studio' },
           ].map(({ to, label }) => (
             <Link
               key={to}

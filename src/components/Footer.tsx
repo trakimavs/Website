@@ -12,7 +12,7 @@ export default function Footer() {
           Handcrafted Tavli boards, made one at a time
         </p>
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/mavrikisdesigns/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs tracking-widest uppercase text-ivory/40 hover:text-gold transition-colors duration-300"

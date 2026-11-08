@@ -90,7 +90,11 @@ export const boards: Board[] = [
     material: 'Kiaat wood, turquoise & charcoal resin, leather handle, IC XC NIKA engraving',
     year: 2025,
     edition: 'Signature Heritage',
-    images: ['/Website/images/board-aegean-1.jpg'],
+    images: [
+      '/Website/images/board-aegean-1.jpg',
+      '/Website/images/board-ic-xc-nika-2.jpg',
+      '/Website/images/board-ic-xc-nika-3.jpg',
+    ],
     available: false,
   },
   {

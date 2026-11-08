@@ -8,7 +8,7 @@ export default function Studio() {
         src={`${import.meta.env.BASE_URL}tavli-studio.html`}
         title="Tavli Board Studio"
         className="block w-full border-0 bg-obsidian"
-        style={{ height: 'calc(100vh - 5rem)' }}
+        style={{ height: 'calc(100dvh - 5rem)' }}
       />
     </main>
   )

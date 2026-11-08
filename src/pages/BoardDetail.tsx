@@ -1,11 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { boards } from '../data/boards'
+import Lightbox from '../components/Lightbox'
 
 export default function BoardDetail() {
   const { id } = useParams<{ id: string }>()
   const board = boards.find((b) => b.id === id)
   const [activeImage, setActiveImage] = useState(0)
+  const [viewerOpen, setViewerOpen] = useState(false)
+
+  // Start each board on its first photo when moving between boards
+  useEffect(() => {
+    setActiveImage(0)
+    setViewerOpen(false)
+  }, [id])
 
   if (!board) {
     return (
@@ -36,13 +44,27 @@ export default function BoardDetail() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           {/* Image gallery */}
           <div className="flex flex-col gap-4">
-            <div className="aspect-square w-full overflow-hidden border border-white/5">
+            <button
+              type="button"
+              onClick={() => setViewerOpen(true)}
+              aria-label={`View ${board.name} full screen`}
+              className="aspect-square w-full overflow-hidden border border-white/5 cursor-zoom-in"
+            >
               <img
                 src={board.images[activeImage]}
                 alt={`${board.name}, image ${activeImage + 1}`}
-                className="w-full h-full object-cover transition-opacity duration-300"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
-            </div>
+            </button>
+            {viewerOpen && (
+              <Lightbox
+                images={board.images}
+                index={activeImage}
+                alt={board.name}
+                onChange={setActiveImage}
+                onClose={() => setViewerOpen(false)}
+              />
+            )}
             {board.images.length > 1 && (
               <div className="flex gap-3">
                 {board.images.map((src, i) => (

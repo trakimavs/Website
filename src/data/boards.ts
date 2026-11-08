@@ -69,12 +69,12 @@ export const boards: Board[] = [
   },
   {
     id: 'the-cyprus',
-    name: 'The Cyprus',
+    name: 'Chakkos',
     style: 'Signature Heritage Board',
-    tagline: 'Warm walnut, emerald and ivory resin, island silhouette inlay',
+    tagline: 'Warm Kiaat, gold and pearl resin, island silhouette engraving',
     description:
-      'The silhouette of Cyprus is worked into the centre field of both halves. Not as decoration, but as orientation. Every game played on this board is played on the island. Emerald and ivory resin points in the warm walnut frame; the proportions chosen to sit well on a table, not just be admired on a wall.',
-    material: 'Walnut, emerald & ivory resin, brass fittings',
+      'Gold the colour of late sun over the Mesaoria plain, set against pearl as pale as the limestone of the old village houses, with the island itself burned into the heart of both halves. Every game played on this board is played on Cyprus, and it was made to bring a little of the island home.',
+    material: 'Kiaat wood, gold & pearl resin, brass fittings',
     year: 2025,
     edition: 'One of one',
     images: ['/Website/images/board-cyprus-1.jpg', '/Website/images/board-cyprus-2.jpg'],

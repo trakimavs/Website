@@ -20,7 +20,7 @@ export const boards: Board[] = [
     material: 'Walnut, emerald resin, hand-turned pieces',
     year: 2025,
     edition: 'Signature piece',
-    images: ['/mavrikis-design/images/board-emerald-1.jpg', '/mavrikis-design/images/board-emerald-2.jpg'],
+    images: ['/website/images/board-emerald-1.jpg', '/website/images/board-emerald-2.jpg'],
     available: false,
   },
   {
@@ -32,7 +32,7 @@ export const boards: Board[] = [
     material: 'Dark walnut, black & silver resin, brass fittings',
     year: 2024,
     edition: 'Custom, each board unique',
-    images: ['/mavrikis-design/images/board-noir-1.jpg', '/mavrikis-design/images/board-noir-2.jpg'],
+    images: ['/website/images/board-noir-1.jpg', '/website/images/board-noir-2.jpg'],
     available: true,
   },
   {
@@ -45,9 +45,9 @@ export const boards: Board[] = [
     year: 2025,
     edition: 'One of one',
     images: [
-      '/mavrikis-design/images/board-greek-cross-1.jpg',
-      '/mavrikis-design/images/board-greek-cross-2.jpg',
-      '/mavrikis-design/images/board-greek-cross-3.jpg',
+      '/website/images/board-greek-cross-1.jpg',
+      '/website/images/board-greek-cross-2.jpg',
+      '/website/images/board-greek-cross-3.jpg',
     ],
     available: false,
   },
@@ -60,7 +60,7 @@ export const boards: Board[] = [
     material: 'Walnut, emerald & ivory resin, brass fittings',
     year: 2025,
     edition: 'One of one',
-    images: ['/mavrikis-design/images/board-cyprus-1.jpg', '/mavrikis-design/images/board-cyprus-2.jpg'],
+    images: ['/website/images/board-cyprus-1.jpg', '/website/images/board-cyprus-2.jpg'],
     available: false,
   },
   {
@@ -72,7 +72,7 @@ export const boards: Board[] = [
     material: 'Olive wood, sage & pearl resin, brass fittings',
     year: 2025,
     edition: 'Commission piece',
-    images: ['/mavrikis-design/images/board-spartan-1.jpg'],
+    images: ['/website/images/board-spartan-1.jpg'],
     available: false,
   },
   {
@@ -84,7 +84,7 @@ export const boards: Board[] = [
     material: 'Figured walnut, jade & ivory resin, brass hardware',
     year: 2026,
     edition: 'Commission, 2 of 2',
-    images: ['/mavrikis-design/images/board-jade-1.jpg', '/mavrikis-design/images/board-jade-2.jpg'],
+    images: ['/website/images/board-jade-1.jpg', '/website/images/board-jade-2.jpg'],
     available: true,
   },
 ]

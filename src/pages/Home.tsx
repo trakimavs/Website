@@ -11,7 +11,7 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         {/* Hero background image */}
         <img
-          src="/mavrikis-design/images/board-noir-2.jpg"
+          src="/website/images/board-noir-2.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
@@ -133,9 +133,9 @@ export default function Home() {
         <p className="section-label mb-10 text-center">The details</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
           {[
-            { src: '/mavrikis-design/images/board-emerald-2.jpg', caption: 'Laser-engraved maker\'s mark' },
-            { src: '/mavrikis-design/images/board-jade-closed.jpg', caption: 'Hand-turned resin pieces' },
-            { src: '/mavrikis-design/images/board-greek-cross-3.jpg', caption: 'Cobalt & pearl resin points' },
+            { src: '/website/images/board-emerald-2.jpg', caption: 'Laser-engraved maker\'s mark' },
+            { src: '/website/images/board-jade-closed.jpg', caption: 'Hand-turned resin pieces' },
+            { src: '/website/images/board-greek-cross-3.jpg', caption: 'Cobalt & pearl resin points' },
           ].map(({ src, caption }) => (
             <div key={src} className="relative overflow-hidden aspect-square bg-charcoal group">
               <img

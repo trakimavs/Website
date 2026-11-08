@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { boards } from '../data/boards'
+import { boards, soldLabel } from '../data/boards'
 
 const FEATURED_IDS = ['emerald', 'noir-argent', 'greek-cross']
 const featured = boards.filter((b) => FEATURED_IDS.includes(b.id))
@@ -98,7 +98,7 @@ export default function Home() {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
                   <span className="text-xs text-ivory/30 tracking-wide">{board.edition}</span>
                   <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold/70' : 'text-ivory/20'}`}>
-                    {board.available ? 'Available' : 'Sold out'}
+                    {board.available ? 'Available' : soldLabel(board)}
                   </span>
                 </div>
               </div>

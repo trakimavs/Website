@@ -1,7 +1,19 @@
+// Heritage and Classic boards are made in runs, so they sell out.
+// Signature Heritage boards are one-offs, so each one is simply sold.
+export type BoardStyle =
+  | 'Heritage Board'
+  | 'Classic Board'
+  | 'Signature Heritage Board'
+  | 'Signature Heritage XL Board'
+
+export function soldLabel(board: Board): string {
+  return board.style.startsWith('Signature') ? 'Sold' : 'Sold out'
+}
+
 export interface Board {
   id: string
   name: string
-  style: 'Heritage Board' | 'Signature Heritage Board'
+  style: BoardStyle
   tagline: string
   description: string
   material: string
@@ -42,10 +54,10 @@ export const boards: Board[] = [
     id: 'greek-cross',
     name: 'Signature Heritage | Hellas',
     style: 'Signature Heritage Board',
-    tagline: 'Kiaat wood, blue and white resin, custom Hellas and wreath engraving',
+    tagline: 'Kiaat wood, cobalt and pearl resin, custom Hellas and wreath engraving',
     description:
       'The Greek coat of arms (laurel wreath, cross, full crest) is laser-engraved into the playing surface of both halves. Cobalt blue and pearl resin points in a paired rhythm. This board was made for someone who wanted to carry a piece of Greece wherever they played. It comes with a leather carry handle and matching piece bag.',
-    material: 'Kiaat wood, Blue and white, matching resin pieces, custom Hellas and Wreath engraving',
+    material: 'Kiaat wood, Cobalt and pearl, matching resin pieces, custom Hellas and Wreath engraving',
     year: 2025,
     edition: 'One of one',
     images: [

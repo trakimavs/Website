@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { boards } from '../data/boards'
+import { boards, soldLabel } from '../data/boards'
 
 export default function Collection() {
   return (
@@ -38,7 +38,7 @@ export default function Collection() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-ivory/30">{board.edition}</span>
                   <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold/70' : 'text-ivory/20'}`}>
-                    {board.available ? 'Available' : 'Sold out'}
+                    {board.available ? 'Available' : soldLabel(board)}
                   </span>
                 </div>
               </div>

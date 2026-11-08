@@ -25,11 +25,11 @@ export const boards: Board[] = [
   },
   {
     id: 'noir-argent',
-    name: 'Noir & Argent',
-    tagline: 'Dark walnut, black and silver resin, bespoke script monogram',
+    name: 'Signature Heritage | SP',
+    tagline: 'Kiaat wood, ebony and ivory resin, custom SP engraving',
     description:
       'Built around a single letter, hand-drawn and then burned into the grain. The monogram mirrors itself across both halves, a detail that only resolves when the board is played. Black and silver resin points in alternating relief; hand-turned pieces in matching tones. A board made for someone who wanted their name to outlast them.',
-    material: 'Dark walnut, black & silver resin, brass fittings',
+    material: 'Kiaat wood, Ebony and Ivory, matching resin pieces, custom SP engraving',
     year: 2024,
     edition: 'Custom, each board unique',
     images: ['/Website/images/board-noir-1.jpg', '/Website/images/board-noir-2.jpg'],

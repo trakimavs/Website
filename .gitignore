@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Website build output (GitHub Actions rebuilds it on every push)
+dist/
+*.tsbuildinfo
+
+# Claude / AI assistant files
+.claude/
+CLAUDE.md
+
+# Markdown notes and docs (private planning, briefs, analysis)
+*.md
+docs/
+
+# Private files: raw photos, secrets, saved emails
+Pictures/
+.env
+.env.*
+*.eml
+*.msg
+*.mbox
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.vscode/

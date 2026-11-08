@@ -1,0 +1,33 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left tavli-point: outer leg → apex → inner leg (no base) -->
+  <polyline points="160,530 310,80 460,530"
+            fill="none" stroke="#000000" stroke-width="3.5"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/>
+
+  <!-- Right tavli-point: inner leg → apex → outer leg (no base) -->
+  <polyline points="340,530 490,80 640,530"
+            fill="none" stroke="#000000" stroke-width="3.5"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/>
+
+  <!-- The only horizontal line: the base of the Δ -->
+  <line x1="340" y1="530" x2="460" y2="530"
+        stroke="#000000" stroke-width="3.5" stroke-linecap="butt"/>
+
+  <!-- MAVRIKIS text -->
+  <text x="393" y="650"
+        font-family="Montserrat, Futura, 'Helvetica Neue', Arial, sans-serif"
+        font-weight="300"
+        font-size="68"
+        letter-spacing="14"
+        text-anchor="middle"
+        fill="#000000">MAVRIKIS</text>
+
+  <!-- designs text -->
+  <text x="392" y="730"
+        font-family="Montserrat, Futura, 'Helvetica Neue', Arial, sans-serif"
+        font-weight="300"
+        font-size="40"
+        letter-spacing="16"
+        text-anchor="middle"
+        fill="#000000">designs</text>
+</svg>

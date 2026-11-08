@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-obsidian text-ivory scroll-smooth;
+  }
+
+  body {
+    @apply font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-gold text-obsidian;
+  }
+
+  /* Thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-obsidian;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold/40 rounded-full;
+  }
+
+  /* Keyboard focus ring */
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-gold/60;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block border border-gold text-gold px-8 py-3 text-sm tracking-widest uppercase
+           font-body font-light transition-all duration-300 cursor-pointer
+           hover:bg-gold hover:text-obsidian focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60;
+  }
+
+  .btn-ghost {
+    @apply inline-block border border-ivory/30 text-ivory/70 px-8 py-3 text-sm tracking-widest uppercase
+           font-body font-light transition-all duration-300 cursor-pointer
+           hover:border-ivory hover:text-ivory focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ivory/40;
+  }
+
+  .section-label {
+    @apply text-xs tracking-ultra uppercase text-gold/70 font-body font-light;
+  }
+
+  /* Luxury card — gold left-border reveals on hover */
+  .card-luxury {
+    @apply relative bg-charcoal transition-colors duration-300 cursor-pointer
+           before:absolute before:left-0 before:top-0 before:h-full before:w-px
+           before:bg-gold before:scale-y-0 before:origin-top
+           before:transition-transform before:duration-500
+           hover:bg-charcoal-light hover:before:scale-y-100;
+  }
+}

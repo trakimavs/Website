@@ -224,7 +224,7 @@
       <div class="row">
         <button class="btn" id="swapP">Swap A ↔ B</button>
       </div>
-      <div class="row"><label>Swirl strength</label><input type="range" id="swirl" min="30" max="170" value="100"><output id="swirlO"></output></div>
+      <div class="row hidden"><label>Swirl strength</label><input type="range" id="swirl" min="30" max="170" value="100"><output id="swirlO"></output></div>
     </section>
 
     <section class="card">
@@ -284,7 +284,7 @@ const DICE = [[1003,328],[780,505]];
 const BURN = [0.28, 0.20, 0.115];           // per-channel transmission at full burn (measured from your board)
 const LNK = BURN.map(Math.log);
 // Signature Heritage suggested combinations, from the palette (Colour A sits where the blue points are)
-const COMBOS = [['Gold','Black'],['Pearl','Royal Blue'],['Ruby','Black'],['Pearl','Black'],['Emerald','Pearl']];
+const COMBOS = [['Pearl','Royal Blue'],['Pearl','Black'],['Emerald','Pearl'],['Ruby','Black'],['Gold','Black']];
 const hexOf = name => PRESETS.find(p=>p[0]===name)[1];
 const NAMES = {};   // rendered colour -> how it's described in the order
 const ORDER_EMAIL = 'mavrikisdesigns@gmail.com';

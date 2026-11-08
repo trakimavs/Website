@@ -5,7 +5,7 @@ export default function Studio() {
   return (
     <main className="pt-20">
       <iframe
-        src={`${import.meta.env.BASE_URL}tavli-studio.html`}
+        src={`${import.meta.env.BASE_URL}tavli-studio.html?v=${__BUILD_ID__}`}
         title="Tavli Board Studio"
         allow="web-share; clipboard-write"
         className="block w-full border-0 bg-obsidian"

@@ -81,16 +81,16 @@ export const boards: Board[] = [
     available: false,
   },
   {
-    id: 'the-spartan',
-    name: 'The Spartan',
+    id: 'ic-xc-nika',
+    name: 'IC XC NIKA',
     style: 'Signature Heritage Board',
-    tagline: 'Olive wood, sage and pearl resin, Spartan helmet inlay',
+    tagline: 'Figured Kiaat, turquoise and charcoal resin, IC XC NIKA cross engraving',
     description:
-      'A Spartan helmet rendered in the wood beneath a field of sage and pearl resin points. The initials are worked into the composition rather than added as an afterthought. The board was designed around them. One of the more requested commissions; always executed differently from the last.',
-    material: 'Olive wood, sage & pearl resin, brass fittings',
+      'Turquoise the colour of the domes on a whitewashed island church, set against charcoal as deep as the smoke from its candles, all laid into wood whose grain ripples out from the centre like rings on still water. At the heart of both halves sits the cross and its ancient promise, IC XC NIKA: Jesus Christ conquers.',
+    material: 'Kiaat wood, turquoise & charcoal resin, leather handle, IC XC NIKA engraving',
     year: 2025,
-    edition: 'Commission piece',
-    images: ['/Website/images/board-spartan-1.jpg'],
+    edition: 'Signature Heritage',
+    images: ['/Website/images/board-aegean-1.jpg'],
     available: false,
   },
   {

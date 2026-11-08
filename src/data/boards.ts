@@ -56,7 +56,7 @@ export const boards: Board[] = [
     style: 'Signature Heritage Board',
     tagline: 'Kiaat wood, cobalt and pearl resin, custom Hellas and wreath engraving',
     description:
-      'The Greek coat of arms (laurel wreath, cross, full crest) is laser-engraved into the playing surface of both halves. Cobalt blue and pearl resin points in a paired rhythm. This board was made for someone who wanted to carry a piece of Greece wherever they played. It comes with a leather carry handle and matching piece bag.',
+      'Cobalt the colour of the Aegean just past the harbour wall, set against pearl as white as the chapels on the hills above it, all laid into warm Kiaat. The Greek crest and its laurel wreath are engraved into both halves, so wherever this board is opened, it opens onto Greece.',
     material: 'Kiaat wood, Cobalt and pearl, matching resin pieces, custom Hellas and Wreath engraving',
     year: 2025,
     edition: 'One of one',

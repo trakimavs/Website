@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
 import BoardDetail from './pages/BoardDetail'
@@ -10,6 +11,7 @@ import Waitlist from './pages/Waitlist'
 export default function App() {
   return (
     <BrowserRouter basename="/Website">
+      <ScrollToTop />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

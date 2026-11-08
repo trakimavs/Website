@@ -26,12 +26,12 @@ export interface Board {
 export const boards: Board[] = [
   {
     id: 'emerald',
-    name: 'Heritage Board (Emerald)',
+    name: 'Old Money',
     style: 'Heritage Board',
-    tagline: 'Kiaat wood, emerald and ivory resin, the first board to carry the maker\'s mark',
+    tagline: 'Kiaat wood, emerald and pearl resin, the first board to carry the maker\'s mark',
     description:
-      'The first board to carry the Mavrikis signature burned into the centre field. Resin points in deep emerald catch the light differently at every angle. Comes with hand-turned wood and resin playing pieces in matching green and silver, each one turned on the lathe to match the board\'s own proportions.',
-    material: 'Kiaat wood, emerald and ivory, resin pieces, Mavrikis Designs',
+      'Emerald the colour of the green baize in an old gentlemen\'s club, set against pearl with the soft shine of a grandmother\'s necklace, all laid into warm Kiaat. It was the first board to carry the Mavrikis mark, and it was made to be handed down, not bought new.',
+    material: 'Kiaat wood, emerald and pearl, resin pieces, Mavrikis Designs',
     year: 2025,
     edition: 'Heritage Board',
     images: ['/Website/images/board-emerald-1.jpg', '/Website/images/board-emerald-2.jpg'],

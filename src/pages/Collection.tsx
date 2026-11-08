@@ -28,7 +28,7 @@ export default function Collection() {
               </div>
 
               <div className="p-8 md:p-10">
-                <p className="section-label mb-3">{board.year} · {board.material.split(',')[0]}</p>
+                <p className="section-label mb-3">{board.year} · {board.style}</p>
                 <h2 className="font-display text-3xl font-light text-ivory group-hover:text-gold transition-colors duration-300 mb-3">
                   {board.name}
                 </h2>
@@ -38,7 +38,7 @@ export default function Collection() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-ivory/30">{board.edition}</span>
                   <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold/70' : 'text-ivory/20'}`}>
-                    {board.available ? 'Available' : 'Sold'}
+                    {board.available ? 'Available' : 'Sold out'}
                   </span>
                 </div>
               </div>

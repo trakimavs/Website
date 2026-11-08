@@ -1,6 +1,7 @@
 export interface Board {
   id: string
   name: string
+  style: 'Heritage Board' | 'Signature Heritage Board'
   tagline: string
   description: string
   material: string
@@ -14,6 +15,7 @@ export const boards: Board[] = [
   {
     id: 'emerald',
     name: 'Heritage Board (Emerald)',
+    style: 'Heritage Board',
     tagline: 'Kiaat wood, emerald and ivory resin, the first board to carry the maker\'s mark',
     description:
       'The first board to carry the Mavrikis signature burned into the centre field. Resin points in deep emerald catch the light differently at every angle. Comes with hand-turned wood and resin playing pieces in matching green and silver, each one turned on the lathe to match the board\'s own proportions.',
@@ -26,6 +28,7 @@ export const boards: Board[] = [
   {
     id: 'noir-argent',
     name: 'Signature Heritage | SP',
+    style: 'Signature Heritage Board',
     tagline: 'Kiaat wood, ebony and ivory resin, custom SP engraving',
     description:
       'Built around a single letter, hand-drawn and then burned into the grain. The monogram mirrors itself across both halves, a detail that only resolves when the board is played. Black and silver resin points in alternating relief; hand-turned pieces in matching tones. A board made for someone who wanted their name to outlast them.',
@@ -33,11 +36,12 @@ export const boards: Board[] = [
     year: 2024,
     edition: 'Custom, each board unique',
     images: ['/Website/images/board-noir-1.jpg', '/Website/images/board-noir-2.jpg'],
-    available: true,
+    available: false,
   },
   {
     id: 'greek-cross',
     name: 'Signature Heritage | Hellas',
+    style: 'Signature Heritage Board',
     tagline: 'Kiaat wood, blue and white resin, custom Hellas and wreath engraving',
     description:
       'The Greek coat of arms (laurel wreath, cross, full crest) is laser-engraved into the playing surface of both halves. Cobalt blue and pearl resin points in a paired rhythm. This board was made for someone who wanted to carry a piece of Greece wherever they played. It comes with a leather carry handle and matching piece bag.',
@@ -54,6 +58,7 @@ export const boards: Board[] = [
   {
     id: 'the-cyprus',
     name: 'The Cyprus',
+    style: 'Signature Heritage Board',
     tagline: 'Warm walnut, emerald and ivory resin, island silhouette inlay',
     description:
       'The silhouette of Cyprus is worked into the centre field of both halves. Not as decoration, but as orientation. Every game played on this board is played on the island. Emerald and ivory resin points in the warm walnut frame; the proportions chosen to sit well on a table, not just be admired on a wall.',
@@ -66,6 +71,7 @@ export const boards: Board[] = [
   {
     id: 'the-spartan',
     name: 'The Spartan',
+    style: 'Signature Heritage Board',
     tagline: 'Olive wood, sage and pearl resin, Spartan helmet inlay',
     description:
       'A Spartan helmet rendered in the wood beneath a field of sage and pearl resin points. The initials are worked into the composition rather than added as an afterthought. The board was designed around them. One of the more requested commissions; always executed differently from the last.',
@@ -78,6 +84,7 @@ export const boards: Board[] = [
   {
     id: 'jade-ivory',
     name: 'Jade & Ivory',
+    style: 'Signature Heritage Board',
     tagline: 'Figured walnut, jade and ivory resin, calligraphic initials',
     description:
       'Calligraphic initials worked into the open grain of figured walnut, each letter drawn by hand before being burned in. Jade and ivory resin points shift between opaque and translucent depending on the light and the hour. Includes hand-turned pieces in matching materials. Stands as a sculpture when closed; becomes a game when opened.',
@@ -85,6 +92,6 @@ export const boards: Board[] = [
     year: 2026,
     edition: 'Commission, 2 of 2',
     images: ['/Website/images/board-jade-1.jpg', '/Website/images/board-jade-2.jpg'],
-    available: true,
+    available: false,
   },
 ]

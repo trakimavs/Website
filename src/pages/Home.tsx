@@ -88,7 +88,7 @@ export default function Home() {
               </div>
 
               <div className="p-8 md:p-10 flex flex-col gap-2 flex-1">
-                <p className="section-label">{board.material.split(',')[0]}</p>
+                <p className="section-label">{board.style}</p>
                 <h3 className="font-display text-2xl font-light text-ivory group-hover:text-gold transition-colors duration-300">
                   {board.name}
                 </h3>
@@ -98,7 +98,7 @@ export default function Home() {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
                   <span className="text-xs text-ivory/30 tracking-wide">{board.edition}</span>
                   <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold/70' : 'text-ivory/20'}`}>
-                    {board.available ? 'Available' : 'Sold'}
+                    {board.available ? 'Available' : 'Sold out'}
                   </span>
                 </div>
               </div>

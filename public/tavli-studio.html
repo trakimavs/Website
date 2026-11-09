@@ -163,7 +163,7 @@
     <section class="card">
       <h2>Collection</h2>
       <div class="tiers" id="tiers">
-        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b><span class="price">R 8 500</span></span><small>Wood pieces in two woods · Royal Blue or Black points with Pearl</small></button>
+        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b><span class="price">R 8 500</span></span><small>Hand-turned wood pieces, black and natural · Royal Blue or Black points with Pearl</small></button>
         <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b><span class="price">R 10 000</span></span><small>Resin pieces that match the points</small></button>
         <button class="tier" data-tier="signature"><span class="top"><b>Signature Heritage</b><span class="price">Quote Me</span></span><small>Your own logo and size · choose point and piece colours</small></button>
       </div>
@@ -283,7 +283,8 @@ const TIERS = { classic:{name:'Classic',price:'R 8 500'}, heritage:{name:'Herita
 const POINT_SCHEMES = { blue:['#2a4060','#b7babb'], black:['#1d1e22','#b7babb'] };
 const PEARL = '#b7babb';
 // Classic wood pieces: set 1 sits where the blue pieces are, set 2 where the pearl pieces are
-const WOODS = { dark:{name:'Dark wood', hex:'#4a3124'}, light:{name:'Light wood', hex:'#d6bb8e'} };
+// Colours sampled from photos of the real turned pieces: ebonised (near-black) and pale natural wood
+const WOODS = { dark:{name:'Black stained wood', hex:'#2a282c'}, light:{name:'Natural light wood', hex:'#dcc3a4'} };
 const PRESETS = [
   ['Royal Blue','#2a4060'],['Pearl','#b7babb'],['Black','#1d1e22'],['Emerald','#1f5a43'],['Olive','#4d5230'],
   ['Gold','#a8843c'],['Ruby','#7a1f24'],['Amethyst','#3f2a5c'],['Rose','#c49a9e']
@@ -461,10 +462,18 @@ function woodPixel(i, k, W, shade, G, tmp){
   const g=G[k], x=i%1280-g.x, y=((i/1280)|0)-g.y, ang=k*2.39996+0.7, c=Math.cos(ang), s=Math.sin(ang);
   let u=c*x+s*y+100+((k*37)%40-20), v=-s*x+c*y+100+((k*53)%40-20);
   u=Math.min(TEX-1,Math.max(0,u|0)); v=Math.min(TEX-1,Math.max(0,v|0));
-  const ti=v*TEX+u, d=Math.hypot(x,y)/g.r;
+  const rr=Math.hypot(x,y), ti=v*TEX+u, d=rr/g.r;
   let rel = 1 + texL[ti]*1.1 + shade*0.75;
   if (d>0.9) rel -= Math.min(1,(d-0.9)/0.12)*0.18;      // turned edge / side of the piece
-  const L = softL(W.L*rel);
+  // turned top: a raised rim around a shallow dish, with fine lathe rings in the dish
+  // relief > 0 catches the light (from upper left), < 0 falls into shadow
+  const facing = rr>0? -(x*-0.5 + y*-0.85)/rr : 0;      // dish wall faces inward, so the far wall is lit
+  let relief = 0;
+  const wall = 1-Math.abs(d-0.62)/0.07;                 // the step down from rim into the dish
+  if (wall>0) relief += wall*(0.25+0.75*facing)*0.9;
+  if (d<0.58) relief -= 0.12 + 0.28*Math.pow(0.5+0.5*Math.cos(d*Math.PI*2*5.5),8);   // dish sits lower; lathe grooves
+  if (d>0.69 && d<0.88) relief += 0.12;                 // flat top of the rim
+  const L = softL(W.L*(rel + 0.22*relief) + 9*relief);
   const cf = Math.min(1.35,Math.max(0.7,texC[ti]));
   lab2rgbInto(L, W.a*cf, W.b*cf, tmp, 0);
 }
@@ -519,7 +528,7 @@ function syncUI(){
   const sig=state.tier==='signature';
   $('stdControls').classList.toggle('hidden',sig); $('sigControls').classList.toggle('hidden',!sig);
   const [a,b]=POINT_SCHEMES[state.scheme];
-  if (state.tier==='classic'){ $('piecePair').innerHTML=`<i style="background:${WOODS.dark.hex}"></i><i style="background:${WOODS.light.hex}"></i>`; $('pieceInfo').textContent='Wood pieces: one set in dark wood, one in light wood.'; }
+  if (state.tier==='classic'){ $('piecePair').innerHTML=`<i style="background:${WOODS.dark.hex}"></i><i style="background:${WOODS.light.hex}"></i>`; $('pieceInfo').textContent='Hand-turned wood pieces: one set stained black, one in natural light wood.'; }
   else { $('piecePair').innerHTML=`<i style="background:${a}"></i><i style="background:${b}"></i>`; $('pieceInfo').textContent='Resin pieces that match the point colours.'; }
   $('stdThumb').style.backgroundImage=`url(${ASSETS.mavlogo})`;
   $('hint').textContent = sig? 'Drop a logo image onto the board to engrave it.' : '';

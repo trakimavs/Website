@@ -28,12 +28,20 @@ export const organization = {
   name: BRAND,
   url: `${SITE_URL}/`,
   description:
-    'Maker of handcrafted Tavli (backgammon) boards in Gauteng, South Africa. Solid Kiaat wood, hand-poured resin points and custom engravings, one board at a time.',
+    'Maker of handmade backgammon boards in the Greek Tavli tradition, in Gauteng, South Africa. Solid Kiaat wood, hand-poured resin points and custom engravings, one board at a time.',
   email: 'mavrikisdesigns@gmail.com',
   address: { '@type': 'PostalAddress', addressRegion: 'Gauteng', addressCountry: 'ZA' },
   areaServed: 'ZA',
   sameAs: [INSTAGRAM],
-  knowsAbout: ['Tavli', 'Backgammon boards', 'Woodworking', 'Resin inlay', 'Laser engraving'],
+  knowsAbout: [
+    'Backgammon',
+    'Backgammon boards',
+    'Tavli',
+    'Custom backgammon boards',
+    'Woodworking',
+    'Resin inlay',
+    'Laser engraving',
+  ],
 }
 
 function breadcrumbs(items: { name: string; path: string }[]) {
@@ -49,14 +57,21 @@ function breadcrumbs(items: { name: string; path: string }[]) {
   }
 }
 
+// Google shows about 60 characters of a title. Series pages with long names
+// (Wedding Commissions) fall back to a shorter form so the brand isn't cut off.
+function boardTitle(board: Board): string {
+  const full = `${board.name} | Handmade Backgammon Board | ${BRAND}`
+  return full.length <= 60 ? full : `${board.name} | Backgammon Boards | ${BRAND}`
+}
+
 function boardMeta(board: Board): PageMetaData {
   const path = `/collection/${board.id}`
   return {
-    title: `${board.name} | Handmade Tavli Board | ${BRAND}`,
-    description: `${board.tagline}. A handmade Tavli (backgammon) board by ${BRAND}, South Africa.`,
+    title: boardTitle(board),
+    description: `${board.name}, a handmade backgammon (Tavli) board from South Africa. ${board.tagline}.`,
     path,
     image: board.images[0],
-    imageAlt: `${board.name}, a handmade Tavli board by ${BRAND}`,
+    imageAlt: board.imageAlts[0],
     found: true,
     jsonLd: [
       {
@@ -64,15 +79,20 @@ function boardMeta(board: Board): PageMetaData {
         '@type': 'CreativeWork',
         '@id': `${absolute(path)}#board`,
         name: board.name,
-        alternateName: `${board.name} Tavli board`,
+        alternateName: [`${board.name} backgammon board`, `${board.name} Tavli board`],
         description: board.description,
         abstract: board.tagline,
-        genre: 'Handmade Tavli (backgammon) board',
+        genre: 'Handmade backgammon (Tavli) board',
+        keywords: 'backgammon board, handmade backgammon board, custom backgammon board, Tavli, South Africa',
         material: board.material,
         // First year only: a span like '2018-Present' is not a valid date
         dateCreated: String(board.year).slice(0, 4),
         url: absolute(path),
-        image: board.images.map(absolute),
+        image: board.images.map((src, i) => ({
+          '@type': 'ImageObject',
+          contentUrl: absolute(src),
+          caption: board.imageAlts[i],
+        })),
         creator: { '@id': `${SITE_URL}/#organization` },
         isPartOf: { '@type': 'CollectionPage', url: absolute('/collection') },
       },
@@ -90,9 +110,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/') {
     return {
-      title: `${BRAND} | Handmade Tavli & Backgammon Boards, South Africa`,
+      title: `Handmade Backgammon Boards, South Africa | ${BRAND}`,
       description:
-        'Handcrafted Tavli (backgammon) boards made one at a time in South Africa. Solid Kiaat wood, hand-poured resin points and custom engravings, built to be handed down.',
+        'Handmade backgammon (Tavli) boards, made one at a time in South Africa. Solid Kiaat wood, hand-poured resin points and custom engravings, built to be handed down.',
       path,
       image: DEFAULT_IMAGE,
       imageAlt: `An open Tavli board by ${BRAND}`,
@@ -114,12 +134,12 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/collection') {
     return {
-      title: `The Collection | Handmade Tavli Boards | ${BRAND}`,
+      title: `Handmade Backgammon Boards | Collection | ${BRAND}`,
       description:
-        'Every board in the Mavrikis collection: solid Kiaat, hand-poured resin points and custom engravings. Each Tavli (backgammon) board is a single piece, made by hand in South Africa.',
+        'Every handmade backgammon (Tavli) board in the Mavrikis collection: solid Kiaat, hand-poured resin points and custom engravings, made by hand in South Africa.',
       path,
       image: DEFAULT_IMAGE,
-      imageAlt: `Tavli boards by ${BRAND}`,
+      imageAlt: `Handmade backgammon boards by ${BRAND}`,
       found: true,
       jsonLd: [
         {
@@ -127,7 +147,7 @@ export function pageMeta(pathname: string): PageMetaData {
           '@type': 'CollectionPage',
           name: 'The Collection',
           url: absolute(path),
-          about: 'Handmade Tavli (backgammon) boards',
+          about: 'Handmade backgammon (Tavli) boards',
           publisher: { '@id': `${SITE_URL}/#organization` },
           mainEntity: {
             '@type': 'ItemList',
@@ -149,12 +169,12 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/collection/poulia') {
     return {
-      title: `Poulia: Handmade Tavli Pieces | ${BRAND}`,
+      title: `Handmade Backgammon Pieces (Poulia) | ${BRAND}`,
       description:
-        'The pieces (poulia) made for every Mavrikis Tavli board: two-faced, swirled resin on one side and wood with a resin eye on the other, made by hand in South Africa.',
+        'Handmade backgammon pieces (poulia) for every Mavrikis board: two-faced, swirled resin on one side and wood with a resin eye on the other, made in South Africa.',
       path,
       image: '/images/poulia-1.jpg',
-      imageAlt: 'Cobalt and pearl resin Tavli pieces with matching coasters by Mavrikis Designs',
+      imageAlt: 'Cobalt and pearl resin backgammon pieces with matching coasters by Mavrikis Designs',
       found: true,
       jsonLd: [
         {
@@ -162,7 +182,7 @@ export function pageMeta(pathname: string): PageMetaData {
           '@type': 'ImageGallery',
           name: 'Poulia: the pieces',
           url: absolute(path),
-          about: 'Handmade Tavli (backgammon) pieces',
+          about: 'Handmade backgammon (Tavli) pieces',
           publisher: { '@id': `${SITE_URL}/#organization` },
         },
         breadcrumbs([
@@ -182,9 +202,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/about') {
     return {
-      title: `About | The Maker Behind ${BRAND}`,
+      title: `About the Backgammon Board Maker | ${BRAND}`,
       description:
-        "Why Mavrikis Designs makes Tavli boards: a grandfather's handmade board, sixty years of games, and a search for the real thing. One maker, one board at a time.",
+        "Why Mavrikis Designs makes backgammon boards: a grandfather's handmade Tavli board, sixty years of games, and a search for the real thing. One maker, one board at a time.",
       path,
       image: '/images/pappou-board.jpg',
       imageAlt: "Pappou's handmade Tavli board",
@@ -207,9 +227,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/waitlist') {
     return {
-      title: `Join the Waitlist | Commission a Tavli Board | ${BRAND}`,
+      title: `Commission a Custom Backgammon Board | ${BRAND}`,
       description:
-        "Boards are made to order. Join the waitlist or ask about a custom commission, and we'll reply personally within 48 hours.",
+        "Every backgammon board is made to order. Join the waitlist or ask about a custom or personalised commission, and we'll reply personally within 48 hours.",
       path,
       image: DEFAULT_IMAGE,
       imageAlt: `An open Tavli board by ${BRAND}`,
@@ -225,9 +245,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/studio') {
     return {
-      title: `Tavli Board Studio | Design Your Own Board | ${BRAND}`,
+      title: `Design Your Own Backgammon Board | ${BRAND}`,
       description:
-        'Pick the resin colours for the points and preview your own Tavli board, then send the design to Mavrikis Designs to have it made.',
+        'Pick the resin colours and engraving, preview your own custom backgammon board, then send the design to Mavrikis Designs to have it made by hand.',
       path,
       image: DEFAULT_IMAGE,
       imageAlt: `An open Tavli board by ${BRAND}`,
@@ -243,9 +263,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/faq') {
     return {
-      title: `Questions | Tavli Boards, Prices & Commissions | ${BRAND}`,
+      title: `Backgammon Board Prices & Questions | ${BRAND}`,
       description:
-        'Answers about Mavrikis Tavli boards: what they are made of, how commissions and custom engravings work, prices, and how to order.',
+        'Answers about Mavrikis backgammon boards: what they are made of, how commissions and custom engravings work, prices, and how to order.',
       path,
       image: DEFAULT_IMAGE,
       imageAlt: `An open Tavli board by ${BRAND}`,
@@ -274,9 +294,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/how-to-play') {
     return {
-      title: `How to Play Tavli | Portes, Plakoto & Fevga | ${BRAND}`,
+      title: `How to Play Backgammon & Tavli | ${BRAND}`,
       description:
-        'The rules of Tavli, Greek backgammon, in brief: the setup, moves and scoring for Portes, Plakoto and Fevga, plus the words and manners of a Greek table.',
+        'Backgammon rules the Greek way: the setup, moves and scoring for Portes, Plakoto and Fevga, the three games of Tavli, plus the words and manners of a Greek table.',
       path,
       image: DEFAULT_IMAGE,
       imageAlt: `An open Tavli board by ${BRAND}`,
@@ -285,10 +305,10 @@ export function pageMeta(pathname: string): PageMetaData {
         {
           '@context': 'https://schema.org',
           '@type': 'Article',
-          headline: 'How to play Tavli: Portes, Plakoto and Fevga',
+          headline: 'How to play backgammon and Tavli: Portes, Plakoto and Fevga',
           url: absolute(path),
           inLanguage: 'en-ZA',
-          about: ['Tavli', 'Backgammon', 'Portes', 'Plakoto', 'Fevga'],
+          about: ['Backgammon', 'Backgammon rules', 'Tavli', 'Portes', 'Plakoto', 'Fevga'],
           publisher: { '@id': `${SITE_URL}/#organization` },
         },
         breadcrumbs([
@@ -301,7 +321,7 @@ export function pageMeta(pathname: string): PageMetaData {
 
   return {
     title: `Page not found | ${BRAND}`,
-    description: 'This page does not exist. Visit the collection to see every Mavrikis Tavli board.',
+    description: 'This page does not exist. Visit the collection to see every Mavrikis backgammon board.',
     path,
     image: DEFAULT_IMAGE,
     imageAlt: `An open Tavli board by ${BRAND}`,

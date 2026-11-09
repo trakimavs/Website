@@ -52,7 +52,7 @@ export default function BoardDetail() {
             >
               <img
                 src={board.images[activeImage]}
-                alt={`${board.name}, handmade Tavli board, photo ${activeImage + 1}`}
+                alt={board.imageAlts[activeImage]}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
             </button>
@@ -60,7 +60,7 @@ export default function BoardDetail() {
               <Lightbox
                 images={board.images}
                 index={activeImage}
-                alt={board.name}
+                alt={board.imageAlts[activeImage]}
                 onChange={setActiveImage}
                 onClose={() => setViewerOpen(false)}
               />
@@ -78,7 +78,7 @@ export default function BoardDetail() {
                   >
                     <img
                       src={src}
-                      alt=""
+                      alt={board.imageAlts[i]}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -89,7 +89,7 @@ export default function BoardDetail() {
 
           {/* Info */}
           <div className="flex flex-col justify-center">
-            <p className="section-label mb-4">{board.year}</p>
+            <p className="section-label mb-4">Backgammon board · {board.year}</p>
             <h1 className="font-display text-5xl md:text-6xl text-ivory mb-6">
               {board.name}
             </h1>

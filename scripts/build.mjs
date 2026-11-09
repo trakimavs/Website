@@ -126,7 +126,7 @@ await write(
   join(dist, 'llms.txt'),
   `# Mavrikis Designs
 
-> Handcrafted Tavli (backgammon) boards, made one at a time by a single maker in Gauteng, South Africa. Solid Kiaat wood, hand-poured resin points, hand-turned pieces and custom laser engravings. Boards are made to order; there is a waitlist for future work and custom commissions.
+> Handmade backgammon boards in the Greek Tavli tradition, made one at a time by a single maker in Gauteng, South Africa. Solid Kiaat wood, hand-poured resin points, hand-turned pieces and custom laser engravings. Boards are made to order; there is a waitlist for future work and custom commissions.
 
 - Website: ${SITE_URL}/
 - Instagram: https://www.instagram.com/mavrikisdesigns/
@@ -140,7 +140,7 @@ await write(
 - [Waitlist](${SITE_URL}/waitlist): join the waitlist or ask about a commission
 - [Studio](${SITE_URL}/studio): design your own board online
 - [Questions](${SITE_URL}/faq): materials, commissions, ordering and delivery
-- [How to play](${SITE_URL}/how-to-play): the rules of Portes, Plakoto and Fevga, the three games of Tavli
+- [How to play](${SITE_URL}/how-to-play): the rules of Portes, Plakoto and Fevga, the three games of Tavli (Greek backgammon)
 
 ## Boards
 

@@ -22,6 +22,9 @@ export interface Board {
   year: number | string
   edition: string
   images: string[]
+  // One description per photo, in the same order as images. Used as alt text,
+  // which is what Google Images reads, so name the board and say what the photo shows.
+  imageAlts: string[]
   available: boolean
 }
 
@@ -41,6 +44,11 @@ export const boards: Board[] = [
       '/images/board-classic-2.jpg',
       '/images/board-classic-3.jpg',
     ],
+    imageAlts: [
+      'Classic backgammon board open mid-game, black and white points and wooden pieces around the engraved Mavrikis logo',
+      'Turned wooden and resin backgammon pieces with dice, piled in a Classic board',
+      'Classic backgammon board standing open in a garden, black and white points set into warm wood',
+    ],
     available: false,
   },
   {
@@ -59,6 +67,12 @@ export const boards: Board[] = [
       '/images/board-emerald-4.jpg',
       '/images/board-emerald-2.jpg',
     ],
+    imageAlts: [
+      'Old Money backgammon board standing open beside its emerald and pearl resin pieces and a black Mavrikis drawstring bag',
+      'Stacks of emerald and pearl resin pieces on the Old Money backgammon board, above the Kiaat grain and Mavrikis mark',
+      "Mavrikis Designs maker's mark engraved into the Kiaat of the Old Money backgammon board, between emerald and pearl points",
+      "Emerald and pearl pieces on the Old Money backgammon board, with the engraved maker's mark and a knot in the Kiaat",
+    ],
     available: false,
   },
   {
@@ -76,6 +90,11 @@ export const boards: Board[] = [
       '/images/board-greek-cross-2.jpg',
       '/images/board-greek-cross-3.jpg',
     ],
+    imageAlts: [
+      'Hellas backgammon board open with cobalt and pearl points, pieces set for a game and the Greek crest and laurel wreath engraved on both halves',
+      'Cobalt and pearl resin pieces gathered on each half of the Hellas backgammon board, with the Greek crest engraved in Kiaat',
+      'Hellas backgammon board standing open above a pile of cobalt and pearl resin pieces',
+    ],
     available: false,
   },
   {
@@ -89,6 +108,10 @@ export const boards: Board[] = [
     year: 2025,
     edition: 'Signature Heritage',
     images: ['/images/board-cyprus-1.jpg', '/images/board-cyprus-2.jpg'],
+    imageAlts: [
+      'Chakkos backgammon board open on an outdoor table, gold and pearl points with the island of Cyprus engraved in Kiaat',
+      'Chakkos backgammon board set for a game with gold and pearl resin pieces and the Cyprus silhouette engraving',
+    ],
     available: false,
   },
   {
@@ -105,6 +128,11 @@ export const boards: Board[] = [
       '/images/board-aegean-1.jpg',
       '/images/board-ic-xc-nika-2.jpg',
       '/images/board-ic-xc-nika-3.jpg',
+    ],
+    imageAlts: [
+      'IC XC NIKA backgammon board open, Aegean blue and charcoal points around the cross engraved in figured Kiaat',
+      'Close-up of the IC XC NIKA cross engraving with dice and blue resin pieces',
+      'IC XC NIKA backgammon board closed, showing the figured Kiaat grain on the outside',
     ],
     available: false,
   },
@@ -125,6 +153,13 @@ export const boards: Board[] = [
       '/images/board-wedding-3.jpg',
       '/images/board-wedding-4.jpg',
     ],
+    imageAlts: [
+      'Wedding backgammon board in warm light, with amber resin pieces holding flowers from the bridal bouquet',
+      "Wedding backgammon board engraved with the couple's names and wedding date in script, charcoal and pearl points and pieces",
+      "Wedding backgammon board with the couple's initials engraved in a Greek key circle on both halves, copper and blue points and pieces",
+      "Wedding backgammon board with the couple's initials engraved in script on each half, green and pearl points and pieces",
+      'Wedding backgammon board standing open with one initial engraved on each half and green and pearl pieces at its foot',
+    ],
     available: false,
   },
   {
@@ -141,6 +176,11 @@ export const boards: Board[] = [
       '/images/board-commissioned-1.jpg',
       '/images/board-commissioned-2.jpg',
       '/images/board-commissioned-3.jpg',
+    ],
+    imageAlts: [
+      'Commissioned backgammon board standing open, figured wood with deep teal resin filling its natural cracks',
+      'Outside of a commissioned backgammon board, figured wood and teal resin running across both halves',
+      'Commissioned backgammon board with white resin running through burl wood, set with dark and pearl pieces',
     ],
     available: false,
   },

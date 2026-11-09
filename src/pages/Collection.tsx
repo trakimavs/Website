@@ -6,7 +6,7 @@ export default function Collection() {
     <main className="pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-20">
-          <p className="section-label mb-4">All boards</p>
+          <p className="section-label mb-4">Handmade backgammon boards</p>
           <h1 className="font-display text-5xl md:text-7xl text-ivory">
             The Collection
           </h1>
@@ -22,7 +22,7 @@ export default function Collection() {
               <div className="aspect-[4/3] w-full overflow-hidden">
                 <img
                   src={board.images[0]}
-                  alt={`${board.name}, handmade Tavli board`}
+                  alt={board.imageAlts[0]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -50,7 +50,7 @@ export default function Collection() {
             <div className="aspect-[4/3] w-full overflow-hidden">
               <img
                 src="/images/poulia-1.jpg"
-                alt="Cobalt and pearl resin tavli pieces with matching coasters"
+                alt="Cobalt and pearl resin backgammon pieces (poulia) with matching coasters"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

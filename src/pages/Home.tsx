@@ -28,7 +28,7 @@ export default function Home() {
         />
 
         <div className="relative z-10 max-w-3xl mx-auto">
-          <p className="section-label mb-8">Handcrafted in South Africa</p>
+          <p className="section-label mb-8">Handmade backgammon boards · South Africa</p>
           <h1 className="font-display text-6xl md:text-8xl text-ivory leading-none mb-6">
             Boards made<br />
             <em className="text-gold not-italic">to outlast you</em>
@@ -82,7 +82,7 @@ export default function Home() {
               <div className="aspect-square w-full overflow-hidden">
                 <img
                   src={board.images[0]}
-                  alt={`${board.name}, handmade Tavli board`}
+                  alt={board.imageAlts[0]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

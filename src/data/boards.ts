@@ -107,16 +107,22 @@ export const boards: Board[] = [
     available: false,
   },
   {
-    id: 'jade-ivory',
-    name: 'Jade & Ivory',
+    id: 'wedding-commissions',
+    name: 'Wedding Commissions',
     style: 'Signature Heritage Board',
-    tagline: 'Figured walnut, jade and ivory resin, calligraphic initials',
+    tagline: 'Made for one couple and one day: their names, initials or wedding date, in colours they choose',
     description:
-      'Calligraphic initials worked into the open grain of figured walnut, each letter drawn by hand before being burned in. Jade and ivory resin points shift between opaque and translucent depending on the light and the hour. Includes hand-turned pieces in matching materials. Stands as a sculpture when closed; becomes a game when opened.',
-    material: 'Figured walnut, jade & ivory resin, brass hardware',
+      'Every wedding board is made for one couple and the day they were married. Their names, their initials or the date itself are engraved into the wood, set among points in the colours they choose. Some carry one name on each half, so the two meet face to face when the board is closed. Others repeat the initials on both sides, turned so each player reads them the right way up. Long after the guests have gone home, it is opened for the first game of many.',
+    material: 'Wood, resin colours and engraving chosen by the couple',
     year: 2026,
     edition: 'Signature Heritage',
-    images: ['/images/board-jade-1.jpg', '/images/board-jade-2.jpg'],
+    images: [
+      '/images/board-wedding-1.jpg',
+      '/images/board-wedding-2.jpg',
+      '/images/board-wedding-3.jpg',
+      '/images/board-wedding-4.jpg',
+      '/images/board-wedding-5.jpg',
+    ],
     available: false,
   },
 ]

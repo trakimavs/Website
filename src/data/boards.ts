@@ -117,11 +117,11 @@ export const boards: Board[] = [
     year: 2026,
     edition: 'Signature Heritage',
     images: [
+      '/images/board-wedding-5.jpg',
       '/images/board-wedding-1.jpg',
       '/images/board-wedding-2.jpg',
       '/images/board-wedding-3.jpg',
       '/images/board-wedding-4.jpg',
-      '/images/board-wedding-5.jpg',
     ],
     available: false,
   },

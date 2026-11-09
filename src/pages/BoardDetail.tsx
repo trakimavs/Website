@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { boards } from '../data/boards'
+import { boards, soldLabel } from '../data/boards'
 import Lightbox from '../components/Lightbox'
 
 export default function BoardDetail() {
@@ -119,7 +119,9 @@ export default function BoardDetail() {
               </div>
             ) : (
               <div className="flex flex-col gap-3">
-                <p className="text-xs text-ivory/30 tracking-widest uppercase">This piece has been sold</p>
+                <p className="text-xs text-ivory/30 tracking-widest uppercase">
+                  {soldLabel(board) === 'Sold' ? 'This piece has been sold' : 'This board has sold out'}
+                </p>
                 <Link to="/waitlist" className="btn-ghost self-start">
                   Join the waitlist for future work
                 </Link>

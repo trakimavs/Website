@@ -25,6 +25,23 @@ export interface Board {
 
 export const boards: Board[] = [
   {
+    id: 'classic',
+    name: 'Classic',
+    style: 'Classic Board',
+    tagline: 'Black and ivory points, the Mavrikis logo, made in small runs',
+    description:
+      'Black and ivory, the two colours tavli has been played in since the first kafeneio, set into warm wood with the Mavrikis logo at the centre of both halves. No monogram and no commission, just the board as it was always meant to be, made in small runs for the game itself.',
+    material: 'Black and ivory points, wood and resin pieces, Mavrikis logo engraving',
+    year: 2026,
+    edition: 'Classic',
+    images: [
+      '/images/board-classic-1.jpg',
+      '/images/board-classic-2.jpg',
+      '/images/board-classic-3.jpg',
+    ],
+    available: false,
+  },
+  {
     id: 'emerald',
     name: 'Old Money',
     style: 'Heritage Board',

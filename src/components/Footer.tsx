@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Monogram from './Monogram'
 
 export default function Footer() {
@@ -11,14 +12,22 @@ export default function Footer() {
         <p className="text-xs text-ivory/30 tracking-wide">
           Handcrafted Tavli (backgammon) boards, made one at a time in South Africa
         </p>
-        <a
-          href="https://www.instagram.com/mavrikisdesigns/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs tracking-widest uppercase text-ivory/40 hover:text-gold transition-colors duration-300"
-        >
-          Instagram
-        </a>
+        <div className="flex items-center gap-8">
+          <Link
+            to="/faq"
+            className="text-xs tracking-widest uppercase text-ivory/40 hover:text-gold transition-colors duration-300"
+          >
+            Questions
+          </Link>
+          <a
+            href="https://www.instagram.com/mavrikisdesigns/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-widest uppercase text-ivory/40 hover:text-gold transition-colors duration-300"
+          >
+            Instagram
+          </a>
+        </div>
       </div>
     </footer>
   )

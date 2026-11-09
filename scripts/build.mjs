@@ -126,7 +126,7 @@ await write(
   join(dist, 'llms.txt'),
   `# Mavrikis Designs
 
-> Handcrafted Tavli (backgammon) boards, made one at a time by a single maker in South Africa. Solid Kiaat wood, hand-poured resin points, hand-turned pieces and custom laser engravings. Boards are made to order; there is a waitlist for future work and custom commissions.
+> Handcrafted Tavli (backgammon) boards, made one at a time by a single maker in Gauteng, South Africa. Solid Kiaat wood, hand-poured resin points, hand-turned pieces and custom laser engravings. Boards are made to order; there is a waitlist for future work and custom commissions.
 
 - Website: ${SITE_URL}/
 - Instagram: https://www.instagram.com/mavrikisdesigns/
@@ -138,6 +138,7 @@ await write(
 - [About](${SITE_URL}/about): the maker's story, starting with Pappou's handmade board
 - [Waitlist](${SITE_URL}/waitlist): join the waitlist or ask about a commission
 - [Studio](${SITE_URL}/studio): design your own board online
+- [Questions](${SITE_URL}/faq): materials, commissions, ordering and delivery
 
 ## Boards
 

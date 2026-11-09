@@ -28,10 +28,10 @@ export const boards: Board[] = [
     id: 'classic',
     name: 'Classic',
     style: 'Classic Board',
-    tagline: 'Black and ivory points, the Mavrikis logo, made in small runs',
+    tagline: 'Black and white or blue and white points, wooden pieces, the Mavrikis logo, made in small runs',
     description:
-      'Black and ivory, the two colours tavli has been played in since the first kafeneio, set into warm wood with the Mavrikis logo at the centre of both halves. No monogram and no commission, just the board as it was always meant to be, made in small runs for the game itself.',
-    material: 'Black and ivory points, wood and resin pieces, Mavrikis logo engraving',
+      'Black and white, the two colours tavli has been played in since the first kafeneio, or blue and white for the Aegean, set into warm wood with the Mavrikis logo at the centre of both halves. Turned wooden pieces, no monogram and no commission, just the board as it was always meant to be, made in small runs for the game itself.',
+    material: 'Black and white or blue and white points, wooden pieces, Mavrikis logo engraving',
     year: 2026,
     edition: 'Classic',
     images: [

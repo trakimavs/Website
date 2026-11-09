@@ -9,6 +9,7 @@ import BoardDetail from './pages/BoardDetail'
 import About from './pages/About'
 import Waitlist from './pages/Waitlist'
 import Studio from './pages/Studio'
+import FAQ from './pages/FAQ'
 
 // The site without a router, so the build can pre-render each page
 // (src/entry-server.tsx) and the browser can take over (App below).
@@ -25,6 +26,7 @@ export function AppShell() {
         <Route path="/about" element={<About />} />
         <Route path="/waitlist" element={<Waitlist />} />
         <Route path="/studio" element={<Studio />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Footer />
     </>

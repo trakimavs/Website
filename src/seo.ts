@@ -2,6 +2,7 @@
 // and structured data (JSON-LD) that tells Google and AI tools what each page is.
 // Used by the build to write each page's <head>, and by PageMeta in the browser.
 import { boards, type Board } from './data/boards'
+import { answeredFaq } from './data/faq'
 
 export const SITE_URL = 'https://mavrikisdesigns.co.za'
 const BRAND = 'Mavrikis Designs'
@@ -27,9 +28,9 @@ export const organization = {
   name: BRAND,
   url: `${SITE_URL}/`,
   description:
-    'Maker of handcrafted Tavli (backgammon) boards in South Africa. Solid Kiaat wood, hand-poured resin points and custom engravings, one board at a time.',
+    'Maker of handcrafted Tavli (backgammon) boards in Gauteng, South Africa. Solid Kiaat wood, hand-poured resin points and custom engravings, one board at a time.',
   email: 'mavrikisdesigns@gmail.com',
-  address: { '@type': 'PostalAddress', addressCountry: 'ZA' },
+  address: { '@type': 'PostalAddress', addressRegion: 'Gauteng', addressCountry: 'ZA' },
   areaServed: 'ZA',
   sameAs: [INSTAGRAM],
   knowsAbout: ['Tavli', 'Backgammon boards', 'Woodworking', 'Resin inlay', 'Laser engraving'],
@@ -212,6 +213,37 @@ export function pageMeta(pathname: string): PageMetaData {
     }
   }
 
+  if (path === '/faq') {
+    return {
+      title: `Questions | Tavli Boards, Prices & Commissions | ${BRAND}`,
+      description:
+        'Answers about Mavrikis Tavli boards: what they are made of, how commissions and custom engravings work, prices, and how to order.',
+      path,
+      image: DEFAULT_IMAGE,
+      imageAlt: `An open Tavli board by ${BRAND}`,
+      found: true,
+      jsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          url: absolute(path),
+          publisher: { '@id': `${SITE_URL}/#organization` },
+          mainEntity: answeredFaq().flatMap((section) =>
+            section.items.map((item) => ({
+              '@type': 'Question',
+              name: item.question,
+              acceptedAnswer: { '@type': 'Answer', text: item.answer },
+            })),
+          ),
+        },
+        breadcrumbs([
+          { name: 'Home', path: '/' },
+          { name: 'Questions', path },
+        ]),
+      ],
+    }
+  }
+
   return {
     title: `Page not found | ${BRAND}`,
     description: 'This page does not exist. Visit the collection to see every Mavrikis Tavli board.',
@@ -232,5 +264,6 @@ export function allPaths(): string[] {
     '/about',
     '/waitlist',
     '/studio',
+    '/faq',
   ]
 }

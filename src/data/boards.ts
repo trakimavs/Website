@@ -34,7 +34,12 @@ export const boards: Board[] = [
     material: 'Kiaat wood, emerald and pearl, resin pieces, Mavrikis Designs',
     year: 2025,
     edition: 'Heritage Board',
-    images: ['/images/board-emerald-1.jpg', '/images/board-emerald-2.jpg'],
+    images: [
+      '/images/board-emerald-1.jpg',
+      '/images/board-emerald-3.jpg',
+      '/images/board-emerald-4.jpg',
+      '/images/board-emerald-2.jpg',
+    ],
     available: false,
   },
   {

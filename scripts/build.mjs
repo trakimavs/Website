@@ -135,6 +135,7 @@ await write(
 ## Pages
 
 - [The Collection](${SITE_URL}/collection): every board made so far
+- [The pieces](${SITE_URL}/collection/poulia): gallery of the handmade pieces (poulia) that come with every board
 - [About](${SITE_URL}/about): the maker's story, starting with Pappou's handmade board
 - [Waitlist](${SITE_URL}/waitlist): join the waitlist or ask about a commission
 - [Studio](${SITE_URL}/studio): design your own board online

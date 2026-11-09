@@ -11,6 +11,7 @@ import Waitlist from './pages/Waitlist'
 import Studio from './pages/Studio'
 import FAQ from './pages/FAQ'
 import HowToPlay from './pages/HowToPlay'
+import Poulia from './pages/Poulia'
 
 // The site without a router, so the build can pre-render each page
 // (src/entry-server.tsx) and the browser can take over (App below).
@@ -23,6 +24,7 @@ export function AppShell() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
+        <Route path="/collection/poulia" element={<Poulia />} />
         <Route path="/collection/:id" element={<BoardDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/waitlist" element={<Waitlist />} />

@@ -44,6 +44,33 @@ export default function Collection() {
               </div>
             </Link>
           ))}
+
+          {/* The pieces gallery: same card as a board, last in the grid */}
+          <Link to="/collection/poulia" className="card-luxury group">
+            <div className="aspect-[4/3] w-full overflow-hidden">
+              <img
+                src="/images/poulia-1.jpg"
+                alt="Cobalt and pearl resin tavli pieces with matching coasters"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            <div className="p-8 md:p-10">
+              <p className="section-label mb-3">Poulia · πούλια</p>
+              <h2 className="font-display text-3xl text-ivory group-hover:text-gold transition-colors duration-300 mb-3">
+                The Pieces
+              </h2>
+              <p className="text-ivory/70 leading-relaxed mb-6 line-clamp-3">
+                Thirty pieces to a board, fifteen of each colour, every one made by hand. Each
+                has two faces: poured resin, swirled so no two settle the same way, and turned
+                wood with a resin eye set into its centre.
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-ivory/50">Made with every board</span>
+                <span className="text-xs tracking-widest uppercase text-gold">See the pieces</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </main>

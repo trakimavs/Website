@@ -146,6 +146,33 @@ export function pageMeta(pathname: string): PageMetaData {
     }
   }
 
+  if (path === '/collection/poulia') {
+    return {
+      title: `Poulia: Handmade Tavli Pieces | ${BRAND}`,
+      description:
+        'The pieces (poulia) made for every Mavrikis Tavli board: two-faced, swirled resin on one side and wood with a resin eye on the other, made by hand in South Africa.',
+      path,
+      image: '/images/poulia-1.jpg',
+      imageAlt: 'Cobalt and pearl resin Tavli pieces with matching coasters by Mavrikis Designs',
+      found: true,
+      jsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'ImageGallery',
+          name: 'Poulia: the pieces',
+          url: absolute(path),
+          about: 'Handmade Tavli (backgammon) pieces',
+          publisher: { '@id': `${SITE_URL}/#organization` },
+        },
+        breadcrumbs([
+          { name: 'Home', path: '/' },
+          { name: 'Collection', path: '/collection' },
+          { name: 'The pieces', path },
+        ]),
+      ],
+    }
+  }
+
   const boardMatch = path.match(/^\/collection\/([^/]+)$/)
   if (boardMatch) {
     const board = boards.find((b) => b.id === boardMatch[1])
@@ -288,6 +315,7 @@ export function allPaths(): string[] {
     '/',
     '/collection',
     ...boards.map((b) => `/collection/${b.id}`),
+    '/collection/poulia',
     '/about',
     '/waitlist',
     '/studio',

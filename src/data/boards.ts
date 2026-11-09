@@ -1,13 +1,14 @@
 // Heritage and Classic boards are made in runs, so they sell out.
-// Signature Heritage boards are one-offs, so each one is simply sold.
+// Signature Heritage and Commissioned boards are one-offs, so each one is simply sold.
 export type BoardStyle =
   | 'Heritage Board'
   | 'Classic Board'
   | 'Signature Heritage Board'
   | 'Signature Heritage XL Board'
+  | 'Commissioned'
 
 export function soldLabel(board: Board): string {
-  return board.style.startsWith('Signature') ? 'Sold' : 'Sold out'
+  return board.style.startsWith('Signature') || board.style === 'Commissioned' ? 'Sold' : 'Sold out'
 }
 
 export interface Board {
@@ -122,6 +123,23 @@ export const boards: Board[] = [
       '/images/board-wedding-2.jpg',
       '/images/board-wedding-3.jpg',
       '/images/board-wedding-4.jpg',
+    ],
+    available: false,
+  },
+  {
+    id: 'commissioned-works',
+    name: 'Commissioned Works',
+    style: 'Commissioned',
+    tagline: 'One of one, made to a single request, from wood chosen for its grain and resin in a colour chosen by its owner',
+    description:
+      'Some boards begin with a request rather than a design. A piece of figured wood chosen for its grain, resin poured into the cracks and burrs the tree left behind, in a colour picked by the person it is for. The wood decides the shape, so no two can ever be repeated. Each is made once, for one person, and never again.',
+    material: 'Wood and resin colour on request, turned wood pieces',
+    year: 2026,
+    edition: 'One of one',
+    images: [
+      '/images/board-commissioned-1.jpg',
+      '/images/board-commissioned-2.jpg',
+      '/images/board-commissioned-3.jpg',
     ],
     available: false,
   },

@@ -112,7 +112,7 @@ export const boards: Board[] = [
     style: 'Signature Heritage Board',
     tagline: 'Made for one couple and one day: their names, initials or wedding date, in colours they choose',
     description:
-      'Every wedding board is made for one couple and the day they were married. Their names, their initials or the date itself are engraved into the wood, set among points in the colours they choose. Some carry one name on each half, so the two meet face to face when the board is closed. Others repeat the initials on both sides, turned so each player reads them the right way up. Long after the guests have gone home, it is opened for the first game of many.',
+      'Every wedding board is made for one couple and the day they were married. Their names, their initials or the date itself are engraved into the wood, set among points in the colours they choose. Some carry one name on each half, so the two meet face to face when the board is closed. Others repeat the initials on both sides, turned so each player reads them the right way up. Some even keep the bouquet: its flowers set into the resin of the pieces, so the day is held in every move. Long after the guests have gone home, it is opened for the first game of many.',
     material: 'Wood, resin colours and engraving chosen by the couple',
     year: 2026,
     edition: 'Signature Heritage',

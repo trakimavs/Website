@@ -9,9 +9,14 @@ export default function Footer() {
           <Monogram size={24} className="text-ivory" />
           <span className="font-display text-base tracking-widest text-ivory">MAVRIKIS DESIGNS</span>
         </div>
-        <p className="text-xs text-ivory/50 tracking-wide">
-          Handcrafted Tavli (backgammon) boards, made one at a time in South Africa
-        </p>
+        <div className="flex flex-col items-center gap-1 text-center">
+          <p className="text-xs text-ivory/50 tracking-wide">
+            Handcrafted Tavli (backgammon) boards, made one at a time in South Africa
+          </p>
+          <p className="text-xs text-ivory/50 tracking-wide">
+            © {__BUILD_YEAR__} Mavrikis Designs
+          </p>
+        </div>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           <Link
             to="/how-to-play"

@@ -140,7 +140,7 @@ export const faq: FaqSection[] = [
         id: 'price',
         question: 'How much does a board cost?',
         answer:
-          'Classic boards start at R8,500, with black and white or blue and white points, wooden pieces and the Mavrikis Designs logo. Heritage boards are R10,000 and come with resin pieces poured to match the points. Signature Heritage boards are made entirely to order, so each one is quoted on request.',
+          'Classic boards start at R8,450, with black and white or blue and white points, wooden pieces and the Mavrikis Designs logo. Heritage boards are R9,950 and come with resin pieces poured to match the points. Signature Heritage boards are made entirely to order, so each one is quoted on request.',
         link: { to: '/waitlist', label: 'Ask for a quote' },
       },
       {

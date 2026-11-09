@@ -397,8 +397,8 @@ const questions = [
 ]
 
 const tiers = [
-  ['Classic', 'R 8 500', 'Kiaat, Mavrikis engraving, two-wood checkers'],
-  ['Heritage', 'R 10 000', 'Resin checkers matched to the points'],
+  ['Classic', 'R 8 450', 'Kiaat, Mavrikis engraving, two-wood checkers'],
+  ['Heritage', 'R 9 950', 'Resin checkers matched to the points'],
   ['Signature Heritage', 'On request', 'Your own crest and your own colours'],
 ]
 

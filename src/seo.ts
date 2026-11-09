@@ -69,7 +69,8 @@ function boardMeta(board: Board): PageMetaData {
         abstract: board.tagline,
         genre: 'Handmade Tavli (backgammon) board',
         material: board.material,
-        dateCreated: String(board.year),
+        // First year only: a span like '2018-Present' is not a valid date
+        dateCreated: String(board.year).slice(0, 4),
         url: absolute(path),
         image: board.images.map(absolute),
         creator: { '@id': `${SITE_URL}/#organization` },

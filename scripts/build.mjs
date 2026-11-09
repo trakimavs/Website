@@ -139,6 +139,7 @@ await write(
 - [Waitlist](${SITE_URL}/waitlist): join the waitlist or ask about a commission
 - [Studio](${SITE_URL}/studio): design your own board online
 - [Questions](${SITE_URL}/faq): materials, commissions, ordering and delivery
+- [How to play](${SITE_URL}/how-to-play): the rules of Portes, Plakoto and Fevga, the three games of Tavli
 
 ## Boards
 

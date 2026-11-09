@@ -29,11 +29,11 @@ export default function Home() {
 
         <div className="relative z-10 max-w-3xl mx-auto">
           <p className="section-label mb-8">Handcrafted in South Africa</p>
-          <h1 className="font-display text-6xl md:text-8xl font-light text-ivory leading-none mb-6">
+          <h1 className="font-display text-6xl md:text-8xl text-ivory leading-none mb-6">
             Boards made<br />
             <em className="text-gold not-italic">to outlast you</em>
           </h1>
-          <p className="text-ivory/50 font-light text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
+          <p className="text-ivory/70 text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
             Each Mavrikis Tavli (backgammon) board is a singular object: carved, fitted,
             and finished by one pair of hands. Not a production run. Not a
             reproduction. A board.
@@ -50,7 +50,7 @@ export default function Home() {
 
         {/* Scroll hint */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-xs tracking-widest uppercase text-ivory/60">Scroll</span>
+          <span className="text-xs tracking-widest uppercase text-ivory/75">Scroll</span>
           <span className="block w-px h-12 bg-gradient-to-b from-ivory/40 to-transparent" />
         </div>
       </section>
@@ -60,13 +60,13 @@ export default function Home() {
         <div className="flex items-end justify-between mb-16">
           <div>
             <p className="section-label mb-3">Current Work</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory">
+            <h2 className="font-display text-4xl md:text-5xl text-ivory">
               The Collection
             </h2>
           </div>
           <Link
             to="/collection"
-            className="hidden md:inline text-xs tracking-widest uppercase text-gold/70 hover:text-gold transition-colors"
+            className="hidden md:inline text-xs tracking-widest uppercase text-gold hover:text-gold transition-colors"
           >
             All boards →
           </Link>
@@ -89,15 +89,15 @@ export default function Home() {
 
               <div className="p-8 md:p-10 flex flex-col gap-2 flex-1">
                 <p className="section-label">{board.style}</p>
-                <h3 className="font-display text-2xl font-light text-ivory group-hover:text-gold transition-colors duration-300">
+                <h3 className="font-display text-2xl text-ivory group-hover:text-gold transition-colors duration-300">
                   {board.name}
                 </h3>
-                <p className="text-ivory/50 text-sm font-light leading-relaxed line-clamp-2">
+                <p className="text-ivory/70 text-sm leading-relaxed line-clamp-2">
                   {board.tagline}
                 </p>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                  <span className="text-xs text-ivory/30 tracking-wide">{board.edition}</span>
-                  <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold/70' : 'text-ivory/20'}`}>
+                  <span className="text-xs text-ivory/50 tracking-wide">{board.edition}</span>
+                  <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold' : 'text-ivory/40'}`}>
                     {board.available ? 'Available' : soldLabel(board)}
                   </span>
                 </div>
@@ -120,11 +120,11 @@ export default function Home() {
       >
         <div className="max-w-3xl mx-auto text-center">
           <p className="section-label mb-8">The philosophy</p>
-          <blockquote className="font-display text-3xl md:text-4xl font-light italic text-ivory/80 leading-relaxed">
+          <blockquote className="font-display text-3xl md:text-4xl italic text-ivory/80 leading-relaxed">
             "Tavli is not chess. It does not pretend to be timeless.
             But the board can be."
           </blockquote>
-          <p className="mt-6 text-xs text-ivory/30 tracking-widest uppercase">Mavrikis Design</p>
+          <p className="mt-6 text-xs text-ivory/50 tracking-widest uppercase">Mavrikis Design</p>
         </div>
       </section>
 
@@ -144,7 +144,7 @@ export default function Home() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ filter: 'brightness(0.9)' }}
               />
-              <p className="absolute bottom-0 left-0 right-0 px-6 py-4 text-xs text-ivory/50 tracking-widest uppercase bg-gradient-to-t from-obsidian/80 to-transparent">
+              <p className="absolute bottom-0 left-0 right-0 px-6 py-4 text-xs text-ivory/70 tracking-widest uppercase bg-gradient-to-t from-obsidian/80 to-transparent">
                 {caption}
               </p>
             </div>
@@ -155,10 +155,10 @@ export default function Home() {
       {/* Waitlist CTA */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-32 text-center">
         <p className="section-label mb-6">Limited production</p>
-        <h2 className="font-display text-4xl md:text-6xl font-light text-ivory mb-6">
+        <h2 className="font-display text-4xl md:text-6xl text-ivory mb-6">
           Next board ships<br />when it's ready
         </h2>
-        <p className="text-ivory/50 max-w-lg mx-auto mb-10 font-light leading-relaxed">
+        <p className="text-ivory/70 max-w-lg mx-auto mb-10 leading-relaxed">
           We make boards in small batches. Join the waitlist to be notified
           before a new piece is released to the public.
         </p>

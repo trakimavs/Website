@@ -244,6 +244,33 @@ export function pageMeta(pathname: string): PageMetaData {
     }
   }
 
+  if (path === '/how-to-play') {
+    return {
+      title: `How to Play Tavli | Portes, Plakoto & Fevga | ${BRAND}`,
+      description:
+        'The rules of Tavli, Greek backgammon, in brief: the setup, moves and scoring for Portes, Plakoto and Fevga, plus the words and manners of a Greek table.',
+      path,
+      image: DEFAULT_IMAGE,
+      imageAlt: `An open Tavli board by ${BRAND}`,
+      found: true,
+      jsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: 'How to play Tavli: Portes, Plakoto and Fevga',
+          url: absolute(path),
+          inLanguage: 'en-ZA',
+          about: ['Tavli', 'Backgammon', 'Portes', 'Plakoto', 'Fevga'],
+          publisher: { '@id': `${SITE_URL}/#organization` },
+        },
+        breadcrumbs([
+          { name: 'Home', path: '/' },
+          { name: 'How to play', path },
+        ]),
+      ],
+    }
+  }
+
   return {
     title: `Page not found | ${BRAND}`,
     description: 'This page does not exist. Visit the collection to see every Mavrikis Tavli board.',
@@ -265,5 +292,6 @@ export function allPaths(): string[] {
     '/waitlist',
     '/studio',
     '/faq',
+    '/how-to-play',
   ]
 }

@@ -51,7 +51,7 @@ export default function Lightbox({ images, index, alt, onChange, onClose }: Ligh
 
   const arrowClass =
     'absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center ' +
-    'text-ivory/60 hover:text-gold border border-white/10 hover:border-gold/50 bg-black/40 ' +
+    'text-ivory/75 hover:text-gold border border-white/10 hover:border-gold/50 bg-black/40 ' +
     'transition-colors duration-200 text-2xl'
 
   return (
@@ -67,7 +67,7 @@ export default function Lightbox({ images, index, alt, onChange, onClose }: Ligh
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-12 h-12 flex items-center justify-center text-ivory/60 hover:text-gold text-3xl transition-colors"
+        className="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-12 h-12 flex items-center justify-center text-ivory/75 hover:text-gold text-3xl transition-colors"
       >
         ×
       </button>
@@ -100,7 +100,7 @@ export default function Lightbox({ images, index, alt, onChange, onClose }: Ligh
       />
 
       {hasMany && (
-        <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs tracking-widest text-ivory/40">
+        <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs tracking-widest text-ivory/60">
           {index + 1} / {count}
         </p>
       )}

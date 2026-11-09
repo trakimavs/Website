@@ -45,10 +45,10 @@ export default function Nav() {
             <li key={to}>
               <Link
                 to={to}
-                className={`text-xs tracking-widest uppercase font-light transition-colors duration-300 ${
+                className={`text-xs tracking-widest uppercase transition-colors duration-300 ${
                   location.pathname === to
                     ? 'text-gold'
-                    : 'text-ivory/60 hover:text-ivory'
+                    : 'text-ivory/75 hover:text-ivory'
                 }`}
               >
                 {label}

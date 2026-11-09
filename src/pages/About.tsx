@@ -5,7 +5,7 @@ export default function About() {
     <main className="pt-32 pb-24">
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         <p className="section-label mb-4">The Craft</p>
-        <h1 className="font-display text-5xl md:text-7xl font-light text-ivory mb-16 leading-none">
+        <h1 className="font-display text-5xl md:text-7xl text-ivory mb-16 leading-none">
           One maker.<br />
           <em className="text-gold not-italic">One board at a time.</em>
         </h1>
@@ -20,14 +20,14 @@ export default function About() {
         </div>
 
         <div className="flex flex-col gap-7">
-          <p className="font-light text-ivory/70 text-lg leading-relaxed">
+          <p className=" text-ivory/70 text-lg leading-relaxed">
             There are three things I remember about my pappou.
           </p>
-          <p className="font-light text-ivory/70 text-lg leading-relaxed">
+          <p className=" text-ivory/70 text-lg leading-relaxed">
             He smoked. He played tavli every afternoon. And he made the board
             they played on himself.
           </p>
-          <p className="font-light text-ivory/70 text-lg leading-relaxed">
+          <p className=" text-ivory/70 text-lg leading-relaxed">
             That board is with my dad now. One day my brothers and I will fight
             over who gets it. The edges are rounded from sixty years of hands,
             the wood is smooth where the checkers sat, and it still smells
@@ -42,17 +42,17 @@ export default function About() {
               className="w-full object-cover"
               loading="lazy"
             />
-            <figcaption className="mt-3 text-ivory/40 text-sm italic">
+            <figcaption className="mt-3 text-ivory/60 text-sm italic">
               Pappou's board.
             </figcaption>
           </figure>
-          <p className="font-light text-ivory/70 text-lg leading-relaxed">
+          <p className=" text-ivory/70 text-lg leading-relaxed">
             When I went looking for one of my own, I found objects that looked
             like tavli boards from a distance, but were far from the real deal.
             Printed points. Veneered surfaces. Boards that wouldn't outlast the
             box they came in.
           </p>
-          <p className="font-light text-ivory/70 text-lg leading-relaxed">
+          <p className=" text-ivory/70 text-lg leading-relaxed">
             So I started making my own. Real wood, real inlay, real hardware,
             with a few lavish additions that didn't exist in the 1960s. I make
             a small number each year. Each one is bespoke for a single person,

@@ -7,7 +7,7 @@ export default function Collection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-20">
           <p className="section-label mb-4">All boards</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-ivory">
+          <h1 className="font-display text-5xl md:text-7xl text-ivory">
             The Collection
           </h1>
         </div>
@@ -29,15 +29,15 @@ export default function Collection() {
 
               <div className="p-8 md:p-10">
                 <p className="section-label mb-3">{board.year} · {board.style}</p>
-                <h2 className="font-display text-3xl font-light text-ivory group-hover:text-gold transition-colors duration-300 mb-3">
+                <h2 className="font-display text-3xl text-ivory group-hover:text-gold transition-colors duration-300 mb-3">
                   {board.name}
                 </h2>
-                <p className="text-ivory/50 font-light leading-relaxed mb-6 line-clamp-3">
+                <p className="text-ivory/70 leading-relaxed mb-6 line-clamp-3">
                   {board.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-ivory/30">{board.edition}</span>
-                  <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold/70' : 'text-ivory/20'}`}>
+                  <span className="text-xs text-ivory/50">{board.edition}</span>
+                  <span className={`text-xs tracking-widest uppercase ${board.available ? 'text-gold' : 'text-ivory/40'}`}>
                     {board.available ? 'Available' : soldLabel(board)}
                   </span>
                 </div>

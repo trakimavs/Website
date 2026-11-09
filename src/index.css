@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  /* Brand colours (as R G B so Tailwind's /opacity works).
+     Softer than true black: easier on the eyes and kinder to the
+     fine strokes of the Bodoni headings. */
+  :root {
+    --obsidian: 26 26 26;        /* #1a1a1a page background */
+    --charcoal: 35 35 35;        /* #232323 panels */
+    --charcoal-light: 45 45 45;  /* #2d2d2d panel hover */
+    --gold: 201 168 76;          /* #c9a84c */
+    --gold-light: 226 196 122;   /* #e2c47a */
+    --ivory: 245 240 232;        /* #f5f0e8 text */
+    --ivory-muted: 200 191 173;  /* #c8bfad */
+  }
+
+  /* The same palette turned inside out: ivory ground, dark text.
+     Gold is deepened so it stays readable on the light background. */
+  .theme-light {
+    --obsidian: 245 240 232;     /* #f5f0e8 page background */
+    --charcoal: 236 228 214;     /* #ece4d6 panels */
+    --charcoal-light: 228 218 201;
+    --gold: 122 92 23;           /* #7a5c17 deep gold */
+    --gold-light: 138 106 30;    /* #8a6a1e */
+    --ivory: 26 26 26;           /* #1a1a1a text */
+    --ivory-muted: 92 82 70;     /* #5c5246 */
+  }
+
   html {
     @apply bg-obsidian text-ivory scroll-smooth;
   }
@@ -13,6 +38,14 @@
 
   h1, h2, h3, h4 {
     @apply font-display;
+  }
+
+  /* Bodoni Moda switches to an ultra-fine "display" cut at large sizes,
+     whose hairlines shimmer on a dark background. Pin it to a sturdier
+     text cut everywhere so headings stay crisp. */
+  .font-display, h1, h2, h3, h4 {
+    font-optical-sizing: none;
+    font-variation-settings: 'opsz' 18;
   }
 
   ::selection {
@@ -47,18 +80,18 @@
 @layer components {
   .btn-primary {
     @apply inline-block border border-gold text-gold px-8 py-3 text-sm tracking-widest uppercase
-           font-body font-light transition-all duration-300 cursor-pointer
+           font-body transition-all duration-300 cursor-pointer
            hover:bg-gold hover:text-obsidian focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60;
   }
 
   .btn-ghost {
     @apply inline-block border border-ivory/30 text-ivory/70 px-8 py-3 text-sm tracking-widest uppercase
-           font-body font-light transition-all duration-300 cursor-pointer
+           font-body transition-all duration-300 cursor-pointer
            hover:border-ivory hover:text-ivory focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ivory/40;
   }
 
   .section-label {
-    @apply text-xs tracking-ultra uppercase text-gold/70 font-body font-light;
+    @apply text-xs tracking-ultra uppercase text-gold font-body;
   }
 
   /* Luxury card — gold left-border reveals on hover */

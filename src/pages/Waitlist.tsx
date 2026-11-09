@@ -48,7 +48,7 @@ export default function Waitlist() {
     <main className="pt-32 pb-24">
       <div className="max-w-xl mx-auto px-6 md:px-12">
         <p className="section-label mb-4">Limited production</p>
-        <h1 className="font-display text-5xl md:text-6xl font-light text-ivory mb-6 leading-none">
+        <h1 className="font-display text-5xl md:text-6xl text-ivory mb-6 leading-none">
           Join the<br />Waitlist
         </h1>
         {referencedBoard && (
@@ -57,7 +57,7 @@ export default function Waitlist() {
             <p className="text-ivory/70 font-display text-xl">{referencedBoard.name}</p>
           </div>
         )}
-        <p className="text-ivory/50 font-light leading-relaxed mb-14">
+        <p className="text-ivory/70 leading-relaxed mb-14">
           Boards are made to order. Leave your details and we'll reach out
           personally within 48 hours, whether you're interested in a specific
           board or would like to discuss a commission.
@@ -66,7 +66,7 @@ export default function Waitlist() {
         {submitted ? (
           <div className="border border-gold/30 bg-gold/5 px-8 py-10 text-center">
             <p className="font-display text-2xl text-ivory mb-3">Thank you.</p>
-            <p className="text-ivory/50 text-sm">
+            <p className="text-ivory/70 text-sm">
               We'll be in touch when the next board is ready.
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function Waitlist() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm font-light transition-colors duration-200"
+                className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm transition-colors duration-200"
               />
             </div>
 
@@ -92,13 +92,13 @@ export default function Waitlist() {
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm font-light transition-colors duration-200"
+                className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm transition-colors duration-200"
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="section-label" htmlFor="message">
-                Message <span className="text-ivory/20">(optional)</span>
+                Message <span className="text-ivory/40">(optional)</span>
               </label>
               <textarea
                 id="message"
@@ -106,7 +106,7 @@ export default function Waitlist() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Any board in particular? Custom commission? Just say hello."
-                className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm font-light placeholder:text-ivory/20 resize-none transition-colors duration-200"
+                className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm placeholder:text-ivory/40 resize-none transition-colors duration-200"
               />
             </div>
 

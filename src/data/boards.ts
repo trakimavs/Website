@@ -65,7 +65,7 @@ export const boards: Board[] = [
     style: 'Signature Heritage Board',
     tagline: 'Kiaat wood, cobalt and pearl resin, custom Hellas and wreath engraving',
     description:
-      'Cobalt the colour of the Aegean just past the harbour wall, set against pearl as white as the chapels on the hills above it, all laid into warm Kiaat. The Greek crest and its laurel wreath are engraved into both halves, so wherever this board is opened, it opens onto Greece.',
+      'Cobalt the blue of an island sky and of the church domes that rise into it, set against pearl as white as the chapel walls beneath them, all laid into warm Kiaat. The Greek crest and its laurel wreath are engraved into both halves, so wherever this board is opened, it opens onto Greece.',
     material: 'Kiaat wood, Cobalt and pearl, matching resin pieces, custom Hellas and Wreath engraving',
     year: 2025,
     edition: 'Signature Heritage',
@@ -93,10 +93,10 @@ export const boards: Board[] = [
     id: 'ic-xc-nika',
     name: 'IC XC NIKA',
     style: 'Signature Heritage Board',
-    tagline: 'Figured Kiaat, turquoise and charcoal resin, IC XC NIKA cross engraving',
+    tagline: 'Figured Kiaat, deep Aegean blue and charcoal resin, IC XC NIKA cross engraving',
     description:
-      'Turquoise the colour of the domes on a whitewashed island church, set against charcoal as deep as the smoke from its candles, all laid into wood whose grain ripples out from the centre like rings on still water. At the heart of both halves sits the cross and its ancient promise, IC XC NIKA: Jesus Christ conquers.',
-    material: 'Kiaat wood, turquoise & charcoal resin, leather handle, IC XC NIKA engraving',
+      'The deep blue of the waters around Mount Athos, where monks have kept watch over the sea for a thousand years, set against charcoal as dark as the stone pillars of Meteora, all laid into wood whose grain ripples out from the centre like rings on still water. At the heart of both halves sits the cross and its ancient promise, IC XC NIKA: Jesus Christ conquers.',
+    material: 'Kiaat wood, Aegean blue & charcoal resin, leather handle, IC XC NIKA engraving',
     year: 2025,
     edition: 'Signature Heritage',
     images: [

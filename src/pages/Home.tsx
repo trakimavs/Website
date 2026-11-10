@@ -34,16 +34,13 @@ export default function Home() {
             <em className="text-gold not-italic">to outlast you</em>
           </h1>
           <p className="text-ivory/70 text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
-            Each Mavrikis Tavli (backgammon) board is a singular object: carved, fitted,
-            and finished by one pair of hands. Not a production run. Not a
-            reproduction. A board.
+            Mavrikis is a name that was handed down to me. So was the board that
+            started all this. Each board is made by hand, one at a time. Each board
+            is made to be passed on to continue your living legacy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/collection" className="btn-primary">
-              View Collection
-            </Link>
-            <Link to="/waitlist" className="btn-ghost">
-              Join the Waitlist
+            <Link to="/studio" className="btn-primary">
+              Design My Own Board
             </Link>
           </div>
         </div>
@@ -121,8 +118,8 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="section-label mb-8">The philosophy</p>
           <blockquote className="font-display text-3xl md:text-4xl italic text-ivory/80 leading-relaxed">
-            "Tavli is not chess. It does not pretend to be timeless.
-            But the board can be."
+            "The game has lasted thousands of years.
+            The board should be made to keep up."
           </blockquote>
           <p className="mt-6 text-xs text-ivory/50 tracking-widest uppercase">Mavrikis Design</p>
         </div>

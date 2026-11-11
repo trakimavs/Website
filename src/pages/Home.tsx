@@ -131,7 +131,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
           {[
             { src: '/images/board-emerald-2.jpg', caption: 'Laser-engraved maker\'s mark' },
-            { src: '/images/board-jade-closed.jpg', caption: 'Hand-turned resin pieces' },
+            { src: '/images/board-jade-closed.jpg', caption: 'Hand-turned wood and resin pieces' },
             { src: '/images/board-greek-cross-3.jpg', caption: 'Cobalt & pearl resin points' },
           ].map(({ src, caption }) => (
             <div key={src} className="relative overflow-hidden aspect-square bg-charcoal group">

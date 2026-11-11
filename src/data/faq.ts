@@ -56,13 +56,13 @@ export const faq: FaqSection[] = [
         id: 'whats-included',
         question: 'What comes with a board?',
         answer:
-          'Every board comes with a pair of dice and thirty pieces, fifteen in each of its two colours. Classic boards come with pieces that are half wood and half resin, the resin matched to the points. Heritage boards come with resin pieces poured to match the points, one spare piece in each colour and a storage rail for the pieces.',
+          'Every board comes with a pair of dice and thirty pieces, fifteen in each of its two colours. Every set is half wood and half resin, the resin poured to match the points. Heritage boards also come with one spare piece in each colour and a storage rail for the pieces.',
       },
       {
         id: 'spare-pieces',
         question: 'Can I order spare pieces?',
         answer:
-          'Yes. A Heritage board already includes one spare piece in each colour. For any board, a spare set adds two pieces in each colour: half wood and half resin for a Classic board, resin for a Heritage board. Spares must be ordered with the board itself. The resin for each board is mixed and poured once, and a later pour will never match it exactly.',
+          'Yes. A Heritage board already includes one spare piece in each colour. For any board, a spare set adds two pieces in each colour, half wood and half resin like the rest. Spares must be ordered with the board itself. The resin for each board is mixed and poured once, and a later pour will never match it exactly.',
       },
       {
         id: 'size',
@@ -140,7 +140,7 @@ export const faq: FaqSection[] = [
         id: 'price',
         question: 'How much does a board cost?',
         answer:
-          'Classic boards are R8,700, with white and green or white and blue points, matching half-wood half-resin pieces and the Mavrikis Designs logo, in the standard size. Heritage boards are R11,600, made in your own colours with your own logo, with resin pieces to match, one spare piece in each colour and a storage rail. Signature boards are commissioned, such as wedding boards, full resin tables and river boards, so each one is quoted on request.',
+          'Classic boards are R8,700, with white and green or white and blue points, matching half-wood half-resin pieces and the Mavrikis Designs logo, in the standard size. Heritage boards are R11,600, made in your own colours with your own logo, with half-wood half-resin pieces to match, one spare piece in each colour and a storage rail. Signature boards are commissioned, such as wedding boards, full resin tables and river boards, so each one is quoted on request.',
         link: { to: '/waitlist', label: 'Ask for a quote' },
       },
       {

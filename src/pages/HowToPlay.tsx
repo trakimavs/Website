@@ -398,7 +398,7 @@ const questions = [
 
 const tiers = [
   ['Classic', 'R 8 700', 'Kiaat, Mavrikis logo, half-wood half-resin checkers'],
-  ['Heritage', 'R 11 600', 'Your own colours and crest, matching resin checkers, a spare per colour, storage rail'],
+  ['Heritage', 'R 11 600', 'Your own colours and crest, matching half-wood half-resin checkers, a spare per colour, storage rail'],
   ['Signature', 'On request', 'Commissioned one-of-one pieces: wedding boards, full resin tables, river boards'],
 ]
 

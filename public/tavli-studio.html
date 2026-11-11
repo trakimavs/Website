@@ -185,8 +185,8 @@
       <h2>Collection</h2>
       <div class="tiers" id="tiers">
         <button class="tier" id="sigTier" type="button" data-tier="signature"><span class="top"><b>Signature</b><span class="price">From R 20 000 · Quote me</span></span><small>Commissioned one-of-one boards · wedding boards, full resin tables, river boards</small></button>
-        <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b><span class="price">R 11 600</span></span><small>Your own colours and logo · matching resin pieces · a spare per colour and a storage rail</small></button>
-        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b><span class="price">R 8 700</span></span><small>Matching resin pieces · White &amp; Green or White &amp; Blue points</small></button>
+        <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b><span class="price">R 11 600</span></span><small>Your own colours and logo · half-wood half-resin pieces to match · a spare per colour and a storage rail</small></button>
+        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b><span class="price">R 8 700</span></span><small>Half-wood half-resin pieces to match · White &amp; Green or White &amp; Blue points</small></button>
       </div>
     </section>
 
@@ -548,7 +548,7 @@ function syncUI(){
   // Signature shows a real river board photo; Heritage and Classic show the live board designer
   $('sigPhoto').classList.toggle('hidden',!comm); view.classList.toggle('hidden',comm); $('stagebar').classList.toggle('hidden',comm);
   const [a,b]=POINT_SCHEMES[state.scheme];
-  $('piecePair').innerHTML=`<i style="background:${b}"></i><i style="background:${a}"></i>`; $('pieceInfo').textContent='Resin pieces that match the point colours.';
+  $('piecePair').innerHTML=`<i style="background:${b}"></i><i style="background:${a}"></i>`; $('pieceInfo').textContent='Half-wood half-resin pieces, the resin matching the point colours.';
   $('stdThumb').style.backgroundImage=`url(${ASSETS.mavlogo})`;
   $('hint').textContent = sig? 'Drop a logo image onto the board to engrave it.' : '';
   document.querySelectorAll('.slot').forEach(s=>{
@@ -623,11 +623,11 @@ function orderSummary(){
   L.push(`Collection: ${T.name} (${T.price})`);
   if (state.tier!=='heritage'){
     L.push(`Points: ${SCHEME_NAMES[state.scheme]}`);
-    L.push('Pieces: resin, matching the points');
+    L.push('Pieces: half wood, half resin, resin matching the points');
     L.push('Engraving: Mavrikis Designs logo on both halves');
   } else {
     L.push(`Points${state.pmode==='combo'?' (suggested combination)':''}: Colour A ${colourName(state.p1)}, Colour B ${colourName(state.p2)}`);
-    L.push(state.match? 'Pieces: resin, matching the points' : `Pieces: Set 1 ${colourName(state.q1)}, Set 2 ${colourName(state.q2)}`);
+    L.push(state.match? 'Pieces: half wood, half resin, resin matching the points' : `Pieces: Set 1 ${colourName(state.q1)}, Set 2 ${colourName(state.q2)}`);
     const logo = state.logo==='mav'? 'Mavrikis Designs logo' : state.logo==='none'? 'No logo' : `Customer logo (${logoFileName||'uploaded image'})`;
     L.push(`Engraving: ${logo}`);
     if (state.logo!=='none') L.push(`Engraving: size setting ${state.size} (default 200) · style: ${state.mode==='line'?'line art':'shaded'} · burn depth ${Math.round(state.depth*100)}% · threshold ${Math.round(state.cut*100)}%`);

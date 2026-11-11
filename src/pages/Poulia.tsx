@@ -63,8 +63,8 @@ export default function Poulia() {
 
         <div className="mt-20 border-t border-white/10 pt-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <p className="font-display text-2xl md:text-3xl text-ivory/90 leading-snug max-w-xl">
-            Every board comes with its pieces. Heritage pieces are poured in resin to match the
-            points, and Classic pieces are half wood, half resin.
+            Every board comes with its pieces: half wood, half resin, with the resin poured to
+            match the points.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/collection" className="btn-primary">See the boards</Link>

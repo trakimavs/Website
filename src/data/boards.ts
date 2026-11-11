@@ -35,7 +35,7 @@ export const boards: Board[] = [
     tagline: 'Kiaat wood, emerald and pearl resin, the first board to carry the maker\'s mark',
     description:
       'Emerald the colour of the green baize in an old gentlemen\'s club, set against pearl with the soft shine of a grandmother\'s necklace, all laid into warm Kiaat. It was the first board to carry the Mavrikis mark, and it was made to be handed down, not bought new.',
-    material: 'Kiaat wood, emerald and pearl, resin pieces, Mavrikis Designs',
+    material: 'Kiaat wood, emerald and pearl, half-wood half-resin pieces, Mavrikis Designs',
     year: 2025,
     edition: 'Classic',
     images: [
@@ -59,7 +59,7 @@ export const boards: Board[] = [
     tagline: 'Kiaat wood, cobalt and pearl resin, custom Hellas and wreath engraving',
     description:
       'Cobalt the blue of an island sky and of the church domes that rise into it, set against pearl as white as the chapel walls beneath them, all laid into warm Kiaat. The Greek crest and its laurel wreath are engraved into both halves, so wherever this board is opened, it opens onto Greece.',
-    material: 'Kiaat wood, Cobalt and pearl, matching resin pieces, custom Hellas and Wreath engraving',
+    material: 'Kiaat wood, Cobalt and pearl, matching half-wood half-resin pieces, custom Hellas and Wreath engraving',
     year: 2025,
     edition: 'Heritage',
     images: [

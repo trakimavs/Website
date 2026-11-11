@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { boards, soldLabel } from '../data/boards'
 
-const FEATURED_IDS = ['classic', 'emerald', 'greek-cross']
+const FEATURED_IDS = ['emerald', 'greek-cross', 'wedding-commissions']
 const featured = boards.filter((b) => FEATURED_IDS.includes(b.id))
 
 export default function Home() {

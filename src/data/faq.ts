@@ -40,29 +40,29 @@ export const faq: FaqSection[] = [
       },
       {
         id: 'board-styles',
-        question: 'What is the difference between a Classic, Heritage and Signature Heritage board?',
+        question: 'What is the difference between a Classic, a Heritage and a Signature board?',
         answer:
-          'Classic and Heritage boards are made in small runs to a set design, so once a run is gone it is sold out. A Signature Heritage board is a one-off, designed around a single person, with its own colours and a custom engraving. It is never made again.',
+          'A Classic board is made in small runs to a set design, with the Mavrikis Designs logo, so once a run is gone it is sold out. A Heritage board is made for one person, in your own colours and with your own logo, and is never made again. A Signature board goes further: a commissioned, one-of-one piece, such as a wedding board, a full resin table or a river board, each quoted on request.',
         link: { to: '/collection', label: 'See the collection' },
       },
       {
         id: 'colours',
         question: 'Can I choose the colours of my board?',
         answer:
-          'Classic and Heritage boards come in two standard colourways: black and white, or blue and white. From time to time we also release a colourway as a limited edition, made in a single run and then retired. For colours entirely your own, a Signature Heritage board is made to your choice.',
+          'Classic boards come in two colourways: white and green, or white and blue. From time to time we also release a colourway as a limited edition, made in a single run and then retired. On a Heritage board the colours are entirely your choice.',
         link: { to: '/studio', label: 'Try colours in the Studio' },
       },
       {
         id: 'whats-included',
         question: 'What comes with a board?',
         answer:
-          'Every board comes with a pair of dice and thirty pieces, fifteen in each of its two colours. Classic boards come with wooden pieces. Heritage and Signature Heritage boards come with resin pieces, poured to match the points.',
+          'Every board comes with a pair of dice and thirty pieces, fifteen in each of its two colours. Classic boards come with pieces that are half wood and half resin, the resin matched to the points. Heritage boards come with resin pieces poured to match the points, one spare piece in each colour and a storage rail for the pieces.',
       },
       {
         id: 'spare-pieces',
         question: 'Can I order spare pieces?',
         answer:
-          'Yes, for every board. A spare set adds two pieces in each colour: wooden for a Classic board, resin for a Heritage or Signature Heritage board. Resin spares must be ordered with the board itself. The resin for each board is mixed and poured once, and a later pour will never match it exactly.',
+          'Yes. A Heritage board already includes one spare piece in each colour. For any board, a spare set adds two pieces in each colour: half wood and half resin for a Classic board, resin for a Heritage board. Spares must be ordered with the board itself. The resin for each board is mixed and poured once, and a later pour will never match it exactly.',
       },
       {
         id: 'size',
@@ -86,7 +86,7 @@ export const faq: FaqSection[] = [
         id: 'custom',
         question: 'Can I have a board made just for me?',
         answer:
-          'Yes. Every Signature Heritage board is made for one person. Tell us the colours, the engraving and who it is for, and we will design it with you.',
+          'Yes. Every Heritage board is made for one person. Tell us the colours, the engraving and who it is for, and we will design it with you. For something further still, such as a wedding board, a full resin table or a river board, ask about a Signature commission.',
         link: { to: '/waitlist', label: 'Ask about a commission' },
       },
       {
@@ -100,7 +100,7 @@ export const faq: FaqSection[] = [
         id: 'engraving',
         question: 'What can be engraved on a board?',
         answer:
-          'Classic and Heritage boards carry the Mavrikis Designs logo. On a Signature Heritage board the engraving is yours: bring your own logo or crest, or we will design one with you. Almost anything is possible, though simple designs with clean lines engrave best into wood. Fine detail tends to soften.',
+          'Classic boards carry the Mavrikis Designs logo. On a Heritage board the engraving is yours: bring your own logo or crest, or we will design one with you. Almost anything is possible, though simple designs with clean lines engrave best into wood. Fine detail tends to soften.',
         link: { to: '/waitlist', label: 'Discuss an engraving' },
       },
       {
@@ -140,7 +140,7 @@ export const faq: FaqSection[] = [
         id: 'price',
         question: 'How much does a board cost?',
         answer:
-          'Classic boards start at R8,450, with black and white or blue and white points, wooden pieces and the Mavrikis Designs logo. Heritage boards are R9,950 and come with resin pieces poured to match the points. Signature Heritage boards are made entirely to order, so each one is quoted on request.',
+          'Classic boards are R8,700, with white and green or white and blue points, matching half-wood half-resin pieces and the Mavrikis Designs logo, in the standard size. Heritage boards are R11,600, made in your own colours with your own logo, with resin pieces to match, one spare piece in each colour and a storage rail. Signature boards are commissioned, such as wedding boards, full resin tables and river boards, so each one is quoted on request.',
         link: { to: '/waitlist', label: 'Ask for a quote' },
       },
       {
@@ -153,7 +153,7 @@ export const faq: FaqSection[] = [
         id: 'cancellations',
         question: 'Can I cancel my order?',
         answer:
-          'Classic and Heritage orders can be cancelled, but the deposit is non-refundable. A Signature Heritage board is designed and made for one person, so once it is ordered it cannot be cancelled or returned.',
+          'Classic orders can be cancelled, but the deposit is non-refundable. Heritage and Signature boards are designed and made for one person, so once ordered they cannot be cancelled or returned.',
       },
       {
         id: 'where-made',

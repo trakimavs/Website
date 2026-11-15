@@ -46,7 +46,9 @@ export default function Home() {
         </div>
 
         {/* Scroll hint */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        {/* In normal flow on phones so it can never sit under the button (iOS viewport is shorter than 100vh);
+            pinned to the bottom of the hero from md up */}
+        <div className="relative z-10 mt-14 md:mt-0 md:absolute md:bottom-10 md:left-1/2 md:-translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="text-xs tracking-widest uppercase text-ivory/75">Scroll</span>
           <span className="block w-px h-12 bg-gradient-to-b from-ivory/40 to-transparent" />
         </div>

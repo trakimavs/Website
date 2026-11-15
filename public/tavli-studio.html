@@ -174,7 +174,6 @@
     <div class="stagebar" id="stagebar">
       <span class="hint" id="hint"></span>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn" id="compare" title="Hold to see the original photo">Hold: original</button>
         <button class="btn" id="reset">Reset</button>
         <button class="btn primary" id="dlPng">Download PNG</button>
         <button class="btn" id="dlJpg">JPG</button>
@@ -401,12 +400,6 @@ async function init(){
   }
   for (const [x0,y0] of DICE) for (let y=y0-17;y<=y0+17;y++) for (let x=x0-17;x<=x0+17;x++) blocked[y*W+x]=1;
   buildChips(); buildCombos(); bindUI(); syncUI();
-  { // reference view for "Hold: original": your board as made, with the Mavrikis Designs logo
-    const keep={...state}; Object.assign(state,{logo:'mav',src:'dark',mode:'line',cut:0.5,size:200});
-    buildStrength(); origView=new ImageData(W,H); origView.data.set(cleanPx);
-    const tmpEMap=eMap; engrave(origView.data, tmpEMap, eW, eH, 1);
-    Object.assign(state,keep); dirtyLogo=true;
-  }
   applyTier();
   status('');
 }
@@ -493,7 +486,6 @@ function render(){
     }
   }
   vctx.putImageData(img,0,0);
-  if (comparing) vctx.putImageData(origView,0,0);
 }
 
 // Design hex -> how that resin photographs under this board's lighting (pearl white reads ~L75 here)
@@ -611,14 +603,11 @@ function bindUI(){
   stage.addEventListener('dragover',e=>{e.preventDefault(); if(state.tier==='heritage') stage.classList.add('drop');});
   stage.addEventListener('dragleave',()=>stage.classList.remove('drop'));
   stage.addEventListener('drop',e=>{e.preventDefault(); stage.classList.remove('drop'); const f=e.dataTransfer.files[0]; if(f && state.tier==='heritage') readLogo(f);});
-  const cmp=$('compare');
-  const on=e=>{e.preventDefault(); comparing=true; render();}, off=()=>{ if(comparing){comparing=false; render();} };
-  cmp.addEventListener('pointerdown',on); cmp.addEventListener('pointerup',off); cmp.addEventListener('pointerleave',off); cmp.addEventListener('pointercancel',off);
   $('dlPng').onclick=()=>save('png'); $('dlJpg').onclick=()=>save('jpg');
   $('modalClose').onclick=()=>$('modal').classList.add('hidden');
   $('orderForm').onsubmit=e=>{ e.preventDefault(); submitOrder(); };
 }
-let comparing=false, origView=null, logoFileName='', logoFileObj=null;
+let logoFileName='', logoFileObj=null;
 function colourName(hex){ if (NAMES[hex]) return NAMES[hex]; const p=PRESETS.find(([n,h])=>h.toLowerCase()===hex.toLowerCase()); return p? p[0] : 'Custom colour '+hex.toUpperCase(); }
 function orderSummary(){
   const T=TIERS[state.tier], L=[];

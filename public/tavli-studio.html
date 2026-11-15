@@ -99,8 +99,8 @@
   .tier.on::before{transform:scaleY(1)}
   .tier b{font:400 19px/1.2 var(--display)}
   .tier small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
-  .tier .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-  .tier .price{font:400 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+  .tier .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 8px}
+  .tier .tag{font:400 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
 
   .schemes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .scheme,.combo{display:flex;align-items:center;gap:10px;background:transparent;border:1px solid var(--line2);padding:10px;color:var(--ivory-muted);font:300 13px var(--body);cursor:pointer;text-align:left;transition:all .3s}
@@ -186,9 +186,9 @@
     <section class="card">
       <h2>Collection</h2>
       <div class="tiers" id="tiers">
-        <button class="tier" id="sigTier" type="button" data-tier="signature"><span class="top"><b>Signature</b></span><small>Commissioned one-of-one boards · wedding boards, full resin tables, river boards</small></button>
-        <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b></span><small>Your own colours and logo · half-wood half-resin pieces to match · a spare per colour and a storage rail</small></button>
-        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b></span><small>Half-wood half-resin pieces to match · White &amp; Green or White &amp; Blue points</small></button>
+        <button class="tier" id="sigTier" type="button" data-tier="signature"><span class="top"><b>Signature</b><span class="tag">(Commission · to order)</span></span><small>Commissioned one-of-one boards · wedding boards, full resin tables, river boards</small></button>
+        <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b><span class="tag">(Most popular · to order)</span></span><small>Your own colours and logo · half-wood half-resin pieces to match · a spare per colour and a storage rail</small></button>
+        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b><span class="tag">(Off the shelf)</span></span><small>Half-wood half-resin pieces to match · White &amp; Green or White &amp; Blue points</small></button>
       </div>
     </section>
 

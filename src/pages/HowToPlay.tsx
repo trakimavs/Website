@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import RulesDownload from '../components/RulesDownload'
 
 // /how-to-play — the full guide to the three Tavli games.
-// Linked from the footer, beside Questions and Instagram.
+// Linked from the footer, beside FAQ and Instagram.
 
 // The podcast section stays hidden until PODCAST_URL is set.
 // The rules PDF lives in public/downloads (see components/RulesDownload.tsx).
@@ -397,9 +397,9 @@ const questions = [
 ]
 
 const tiers = [
-  ['Classic', 'R 8 700', 'Kiaat, Mavrikis logo, half-wood half-resin checkers'],
-  ['Heritage', 'R 11 600', 'Your own colours and crest, matching half-wood half-resin checkers, a spare per colour, storage rail'],
-  ['Signature', 'On request', 'Commissioned one-of-one pieces: wedding boards, full resin tables, river boards'],
+  ['Classic', 'Limited runs', 'Kiaat, Mavrikis logo, half-wood half-resin checkers'],
+  ['Heritage', 'Made for one', 'Your own colours and crest, matching half-wood half-resin checkers, a spare per colour, storage rail'],
+  ['Signature', 'One of one', 'Commissioned one-of-one pieces: wedding boards, full resin tables, river boards'],
 ]
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -702,10 +702,10 @@ export default function HowToPlay() {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            {tiers.map(([name, price, text]) => (
+            {tiers.map(([name, tag, text]) => (
               <div key={name} className="flex-[1_1_220px] min-w-0 border border-ivory/10 p-6 flex flex-col gap-2">
                 <p className="font-display text-2xl text-ivory">{name}</p>
-                <p className="text-sm tracking-wide text-gold">{price}</p>
+                <p className="text-sm tracking-wide text-gold">{tag}</p>
                 <p className=" text-sm leading-relaxed text-ivory/75">{text}</p>
               </div>
             ))}

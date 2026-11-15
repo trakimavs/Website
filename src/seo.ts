@@ -263,9 +263,9 @@ export function pageMeta(pathname: string): PageMetaData {
 
   if (path === '/faq') {
     return {
-      title: `Backgammon Board Prices & Questions | ${BRAND}`,
+      title: `Backgammon Board FAQ | ${BRAND}`,
       description:
-        'Answers about Mavrikis backgammon boards: what they are made of, how commissions and custom engravings work, prices, and how to order.',
+        'Answers about Mavrikis backgammon boards: what they are made of, how commissions and custom engravings work, how to order and shipping.',
       path,
       image: DEFAULT_IMAGE,
       imageAlt: `An open Tavli board by ${BRAND}`,
@@ -286,7 +286,7 @@ export function pageMeta(pathname: string): PageMetaData {
         },
         breadcrumbs([
           { name: 'Home', path: '/' },
-          { name: 'Questions', path },
+          { name: 'FAQ', path },
         ]),
       ],
     }

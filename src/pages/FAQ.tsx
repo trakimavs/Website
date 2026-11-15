@@ -5,11 +5,23 @@ import { faq, answeredFaq } from '../data/faq'
 // only shows answered ones (see src/data/faq.ts).
 const sections = import.meta.env.DEV ? faq : answeredFaq()
 
+// Only one answer open at a time: opening a question closes the others.
+function closeOthers(e: React.SyntheticEvent<HTMLDetailsElement>) {
+  const opened = e.currentTarget
+  if (!opened.open) return
+  opened
+    .closest('main')
+    ?.querySelectorAll<HTMLDetailsElement>('details[open]')
+    .forEach((d) => {
+      if (d !== opened) d.open = false
+    })
+}
+
 export default function FAQ() {
   return (
     <main className="pt-32 pb-24">
       <div className="max-w-3xl mx-auto px-6 md:px-12">
-        <p className="section-label mb-4">Questions</p>
+        <p className="section-label mb-4">FAQ</p>
         <h1 className="font-display text-5xl md:text-7xl text-ivory mb-8 leading-none">
           Before you ask.
         </h1>
@@ -34,6 +46,7 @@ export default function FAQ() {
                     key={item.id}
                     id={item.id}
                     className="group border-b border-white/10"
+                    onToggle={closeOthers}
                   >
                     <summary className="flex items-start justify-between gap-6 py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                       <span className="font-display text-lg md:text-xl text-ivory/90 group-hover:text-ivory transition-colors">
@@ -49,7 +62,11 @@ export default function FAQ() {
 
                     <div className="pb-8 pr-10">
                       {item.answer ? (
-                        <p className=" text-ivory/70 leading-relaxed">{item.answer}</p>
+                        <div className="flex flex-col gap-4">
+                          {item.answer.split('\n\n').map((paragraph, i) => (
+                            <p key={i} className=" text-ivory/70 leading-relaxed">{paragraph}</p>
+                          ))}
+                        </div>
                       ) : (
                         <p className=" text-ivory/50 italic">
                           Answer still to be written. Hidden on the live site.

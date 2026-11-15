@@ -28,7 +28,7 @@ export default function Footer() {
             to="/faq"
             className="text-xs tracking-widest uppercase text-ivory/60 hover:text-gold transition-colors duration-300"
           >
-            Questions
+            FAQ
           </Link>
           <a
             href="https://www.instagram.com/mavrikisdesigns/"

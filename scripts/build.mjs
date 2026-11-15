@@ -139,7 +139,7 @@ await write(
 - [About](${SITE_URL}/about): the maker's story, starting with Pappou's handmade board
 - [Waitlist](${SITE_URL}/waitlist): join the waitlist or ask about a commission
 - [Studio](${SITE_URL}/studio): design your own board online
-- [Questions](${SITE_URL}/faq): materials, commissions, ordering and delivery
+- [FAQ](${SITE_URL}/faq): materials, commissions, ordering and shipping
 - [How to play](${SITE_URL}/how-to-play): the rules of Portes, Plakoto and Fevga, the three games of Tavli (Greek backgammon)
 
 ## Boards

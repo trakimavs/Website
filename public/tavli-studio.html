@@ -114,9 +114,12 @@
   .info{display:flex;align-items:center;gap:12px;color:var(--ivory-muted)}
 
   .form{display:grid;gap:10px}
-  .form input,.form textarea{width:100%;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,240,232,.85);font:300 14px var(--body);padding:11px 12px;transition:border-color .2s}
+  .form input,.form textarea,.form select{width:100%;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,240,232,.85);font:300 14px var(--body);padding:11px 12px;transition:border-color .2s}
   .form input::placeholder,.form textarea::placeholder{color:var(--faint)}
-  .form input:focus,.form textarea:focus{outline:none;border-color:rgba(201,168,76,.6)}
+  .form select{background:var(--obsidian);appearance:auto;cursor:pointer}
+  .form select:invalid{color:var(--faint)}
+  .form select option{color:rgba(245,240,232,.85)}
+  .form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:rgba(201,168,76,.6)}
   .form textarea{min-height:76px;resize:vertical}
 
   /* Flex + margin:auto centres short dialogs but lets tall ones scroll from their top (phones) */
@@ -184,15 +187,15 @@
     <section class="card">
       <h2>Collection</h2>
       <div class="tiers" id="tiers">
-        <button class="tier" id="sigTier" type="button" data-tier="signature"><span class="top"><b>Signature</b><span class="price">From R 20 000 · Quote me</span></span><small>Commissioned one-of-one boards · wedding boards, full resin tables, river boards</small></button>
-        <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b><span class="price">R 11 600</span></span><small>Your own colours and logo · half-wood half-resin pieces to match · a spare per colour and a storage rail</small></button>
-        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b><span class="price">R 8 700</span></span><small>Half-wood half-resin pieces to match · White &amp; Green or White &amp; Blue points</small></button>
+        <button class="tier" id="sigTier" type="button" data-tier="signature"><span class="top"><b>Signature</b></span><small>Commissioned one-of-one boards · wedding boards, full resin tables, river boards</small></button>
+        <button class="tier" data-tier="heritage"><span class="top"><b>Heritage</b></span><small>Your own colours and logo · half-wood half-resin pieces to match · a spare per colour and a storage rail</small></button>
+        <button class="tier" data-tier="classic"><span class="top"><b>Classic</b></span><small>Half-wood half-resin pieces to match · White &amp; Green or White &amp; Blue points</small></button>
       </div>
     </section>
 
     <section class="card" id="sigInfo">
       <h2>Signature commission</h2>
-      <p class="muted" style="margin:0 0 12px;font-size:14px">Signature boards are one of one, made to a single request: wedding boards, full resin tables, river boards and more. Wood, resin and form are chosen together with you, so each is quoted on request, from R 20 000.</p>
+      <p class="muted" style="margin:0 0 12px;font-size:14px">Signature boards are one of one, made to a single request: wedding boards, full resin tables, river boards and more. Wood, resin and form are chosen together with you, so each is quoted on request.</p>
       <p class="muted" style="margin:0 0 14px;font-size:14px">Want to design a board yourself? Choose <b>Heritage</b> or <b>Classic</b> above.</p>
       <button class="btn primary" type="button" id="sigOpen">Request a quote</button>
     </section>
@@ -226,9 +229,6 @@
         <button class="btn" id="noLogo">None</button>
       </div>
       <p class="muted" id="logoName" style="margin:10px 0 0">Current: Mavrikis Designs logo</p>
-      <div class="row"><label>Engrave</label>
-        <div class="seg" id="srcSeg"><button data-v="dark">Dark areas</button><button data-v="shape">Shape</button><button data-v="light">Light areas</button></div>
-      </div>
       <div class="row"><label>Style</label>
         <div class="seg" id="modeSeg"><button data-v="line">Line art</button><button data-v="shade">Shaded</button></div>
       </div>
@@ -276,6 +276,7 @@
         <input id="fName" placeholder="Name *" autocomplete="name">
         <input id="fEmail" type="email" placeholder="Email *" autocomplete="email">
         <input id="fPhone" type="tel" placeholder="Phone *" autocomplete="tel">
+        <select id="fCountry" class="country" required aria-label="Where are you reaching out from?"></select>
         <textarea id="fNotes" placeholder="Notes or special requests"></textarea>
         <div class="row" style="margin-top:4px"><button class="btn primary" type="submit" id="submit">Submit</button><span class="muted" id="formMsg"></span></div>
       </form>
@@ -295,12 +296,13 @@
 </div></div>
 <div class="modal hidden" id="sigModal" role="dialog" aria-modal="true" aria-labelledby="sigTitle"><div class="box" style="max-width:520px">
   <b id="sigTitle">Signature commission</b>
-  <p class="muted" style="margin:8px 0 4px;font-size:14px">One-of-one boards made to a single request: wedding boards, full resin tables, river boards and more. Wood, resin and form are chosen together with you. Signature boards start from R 20 000 and each is quoted on request.</p>
+  <p class="muted" style="margin:8px 0 4px;font-size:14px">One-of-one boards made to a single request: wedding boards, full resin tables, river boards and more. Wood, resin and form are chosen together with you. Each one is quoted on request.</p>
   <p class="muted" style="margin:0 0 14px;font-size:14px">Tell us a little about what you have in mind and we'll be in touch with a quote.</p>
   <form class="form" id="sigForm" novalidate>
     <input id="sName" placeholder="Name *" autocomplete="name">
     <input id="sEmail" type="email" placeholder="Email *" autocomplete="email">
     <input id="sPhone" type="tel" placeholder="Phone *" autocomplete="tel">
+    <select id="sCountry" class="country" required aria-label="Where are you reaching out from?"></select>
     <textarea id="sIdea" placeholder="What would you like made? Occasion, size, colours, engraving, timeline… *"></textarea>
     <div class="row" style="margin-top:4px"><button class="btn primary" type="submit" id="sSubmit">Request a quote</button><button class="btn" type="button" id="sigClose">Close</button><span class="muted" id="sMsg"></span></div>
   </form>
@@ -325,7 +327,7 @@ const COMBOS = [['Pearl','Emerald'],['Pearl','Royal Blue'],['Pearl','Black'],['R
 const hexOf = name => PRESETS.find(p=>p[0]===name)[1];
 const NAMES = {};   // rendered colour -> how it's described in the order
 const ORDER_EMAIL = 'mavrikisdesigns@gmail.com';
-const TIERS = { signature:{name:'Signature',price:'From R 20 000'}, classic:{name:'Classic',price:'R 8 700'}, heritage:{name:'Heritage',price:'R 11 600'} };
+const TIERS = { signature:{name:'Signature'}, classic:{name:'Classic'}, heritage:{name:'Heritage'} };
 const POINT_SCHEMES = { green:['#1f5a43','#b7babb'], blue:['#2a4060','#b7babb'] };
 const SCHEME_NAMES = { green:'White & Green', blue:'White & Blue' };
 const PEARL = '#b7babb';
@@ -335,7 +337,7 @@ const PRESETS = [
 ];
 
 const state = {
-  tier:'signature', scheme:'green', pmode:'combo', combo:0,
+  tier:'signature', scheme:'blue', pmode:'combo', combo:0,
   p1:'#2a4060', p2:'#b7babb', q1:'#2a4060', q2:'#b7babb', match:true,
   activeP:'p1', activeQ:'q1', swirl:1,
   logo:'mav', src:'dark', mode:'line', size:200, depth:1, cut:0.5
@@ -556,7 +558,7 @@ function syncUI(){
     s.classList.toggle('active', k===state.activeP || k===state.activeQ);
   });
   $('match').checked=state.match; $('pieceCtl').classList.toggle('hidden',state.match);
-  for (const [seg,key] of [['srcSeg','src'],['modeSeg','mode']])
+  for (const [seg,key] of [['modeSeg','mode']])
     $(seg).querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===state[key]));
   const sl={size:[state.size,''],depth:[Math.round(state.depth*100),'%'],cut:[Math.round(state.cut*100),'%'],swirl:[Math.round(state.swirl*100),'%']};
   $('cutL').textContent = state.mode==='line'? 'Threshold' : 'Detail cutoff';
@@ -599,7 +601,7 @@ function bindUI(){
   $('match').onchange=e=>{ state.match=e.target.checked; if(!state.match){ state.q1=state.p1; state.q2=state.p2; } syncUI(); schedule(); };
   const sliders={size:[v=>v,true],depth:[v=>v/100,false],cut:[v=>v/100,true],swirl:[v=>v/100,false]};
   for (const k in sliders) $(k).oninput=e=>{ state[k]=sliders[k][0](+e.target.value); syncUI(); schedule(sliders[k][1]); };
-  for (const [seg,key] of [['srcSeg','src'],['modeSeg','mode']])
+  for (const [seg,key] of [['modeSeg','mode']])
     $(seg).querySelectorAll('button').forEach(b=>b.onclick=()=>{ state[key]=b.dataset.v; if(key==='mode') state.cut = b.dataset.v==='line'? 0.5 : 0.12; syncUI(); schedule(true); });
   $('logoFile').onchange=e=>{ if (e.target.files[0]) readLogo(e.target.files[0]); e.target.value=''; };
   $('useMav').onclick=()=>setLogoSource('mav');
@@ -620,7 +622,7 @@ let comparing=false, origView=null, logoFileName='', logoFileObj=null;
 function colourName(hex){ if (NAMES[hex]) return NAMES[hex]; const p=PRESETS.find(([n,h])=>h.toLowerCase()===hex.toLowerCase()); return p? p[0] : 'Custom colour '+hex.toUpperCase(); }
 function orderSummary(){
   const T=TIERS[state.tier], L=[];
-  L.push(`Collection: ${T.name} (${T.price})`);
+  L.push(`Collection: ${T.name}`);
   if (state.tier!=='heritage'){
     L.push(`Points: ${SCHEME_NAMES[state.scheme]}`);
     L.push('Pieces: half wood, half resin, resin matching the points');
@@ -635,14 +637,23 @@ function orderSummary(){
   }
   return L;
 }
+// Countries for the "Where are you reaching out from?" menus. Same list as
+// src/data/countries.ts, so update both together. South Africa is pinned first.
+const COUNTRIES = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "São Tomé and Príncipe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
+document.querySelectorAll('select.country').forEach(sel=>{
+  const opt=(v,t,dis)=>{ const o=document.createElement('option'); o.value=v; o.textContent=t; if(dis) o.disabled=true; sel.appendChild(o); return o; };
+  opt('','Where are you reaching out from? *',true).selected=true;
+  opt('South Africa','South Africa'); opt('','──────────',true);
+  COUNTRIES.filter(c=>c!=='South Africa').forEach(c=>opt(c,c));
+});
 function submitOrder(){
-  const name=$('fName').value.trim(), email=$('fEmail').value.trim(), phone=$('fPhone').value.trim(), notes=$('fNotes').value.trim();
-  const miss=[]; if(!name) miss.push('name'); if(!/^\S+@\S+\.\S+$/.test(email)) miss.push('a valid email'); if(phone.replace(/\D/g,'').length<9) miss.push('a phone number');
+  const name=$('fName').value.trim(), email=$('fEmail').value.trim(), phone=$('fPhone').value.trim(), country=$('fCountry').value, notes=$('fNotes').value.trim();
+  const miss=[]; if(!name) miss.push('name'); if(!/^\S+@\S+\.\S+$/.test(email)) miss.push('a valid email'); if(phone.replace(/\D/g,'').length<9) miss.push('a phone number'); if(!country) miss.push('where you are reaching out from');
   if (miss.length){ $('formMsg').textContent='Please add '+miss.join(', ')+'.'; return; }
   $('formMsg').textContent='Sending…'; $('submit').disabled=true;
   const fields = {
     _subject:`LEAD: Website Generation - ${name}`, _template:'table', _captcha:'false',
-    Name:name, email:email, Phone:phone, Notes:notes||'None',
+    Name:name, email:email, Phone:phone, 'Reaching out from':country, Notes:notes||'None',
     Order: orderSummary().join('\n'),
   };
   // Design image (JPEG keeps it well under FormSubmit's 10 MB limit) plus the customer's own logo, if any
@@ -671,12 +682,12 @@ function submitOrder(){
   f.submit();
 }
 function submitSignature(){
-  const name=$('sName').value.trim(), email=$('sEmail').value.trim(), phone=$('sPhone').value.trim(), idea=$('sIdea').value.trim();
-  const miss=[]; if(!name) miss.push('name'); if(!/^\S+@\S+\.\S+$/.test(email)) miss.push('a valid email'); if(phone.replace(/\D/g,'').length<9) miss.push('a phone number'); if(!idea) miss.push('a few words about the board');
+  const name=$('sName').value.trim(), email=$('sEmail').value.trim(), phone=$('sPhone').value.trim(), country=$('sCountry').value, idea=$('sIdea').value.trim();
+  const miss=[]; if(!name) miss.push('name'); if(!/^\S+@\S+\.\S+$/.test(email)) miss.push('a valid email'); if(phone.replace(/\D/g,'').length<9) miss.push('a phone number'); if(!country) miss.push('where you are reaching out from'); if(!idea) miss.push('a few words about the board');
   if (miss.length){ $('sMsg').textContent='Please add '+miss.join(', ')+'.'; return; }
   $('sMsg').textContent='Sending…'; $('sSubmit').disabled=true;
   const fields = { _subject:`LEAD: Signature quote - ${name}`, _template:'table', _captcha:'false',
-    Name:name, email:email, Phone:phone, Collection:'Signature (from R 20 000, quote on request)', Request:idea };
+    Name:name, email:email, Phone:phone, 'Reaching out from':country, Collection:'Signature (quote on request)', Request:idea };
   const f=document.createElement('form');
   f.method='POST'; f.target='sigPost'; f.style.display='none'; f.action='https://formsubmit.co/'+ORDER_EMAIL;
   for (const [k,v] of Object.entries(fields)){ const el=document.createElement(k==='Request'?'textarea':'input'); el.name=k; el.value=v; f.appendChild(el); }

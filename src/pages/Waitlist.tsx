@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { boards } from '../data/boards'
+import { countries, PINNED_COUNTRY } from '../data/countries'
 
 export default function Waitlist() {
   const [searchParams] = useSearchParams()
@@ -13,6 +14,7 @@ export default function Waitlist() {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    country: '',
     message: referencedBoard ? `I'm interested in the ${referencedBoard.name}.` : '',
   })
 
@@ -27,7 +29,10 @@ export default function Waitlist() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          ...form,
+          name: form.name,
+          email: form.email,
+          'Reaching out from': form.country,
+          message: form.message,
           _subject: referencedBoard
             ? `Waitlist request: ${referencedBoard.name}`
             : 'New waitlist request',
@@ -94,6 +99,26 @@ export default function Waitlist() {
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="bg-transparent border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-ivory/80 text-sm transition-colors duration-200"
               />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="section-label" htmlFor="country">Where are you reaching out from?</label>
+              <select
+                id="country"
+                required
+                value={form.country}
+                onChange={(e) => setForm({ ...form, country: e.target.value })}
+                className={`bg-obsidian border border-white/10 focus:border-gold/60 outline-none px-4 py-3 text-sm transition-colors duration-200 ${form.country ? 'text-ivory/80' : 'text-ivory/40'}`}
+              >
+                <option value="" disabled>Select your country</option>
+                <option value={PINNED_COUNTRY} className="text-ivory">{PINNED_COUNTRY}</option>
+                <option disabled>──────────</option>
+                {countries
+                  .filter((c) => c !== PINNED_COUNTRY)
+                  .map((c) => (
+                    <option key={c} value={c} className="text-ivory">{c}</option>
+                  ))}
+              </select>
             </div>
 
             <div className="flex flex-col gap-2">

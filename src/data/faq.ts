@@ -6,6 +6,7 @@
 // search data, so a half-finished FAQ can never go out.
 //
 // Keep answers as plain text (no markdown): Google reads them word for word.
+// A blank line (\n\n) starts a new paragraph on the page.
 // To point the reader somewhere on the site, add a `link`.
 
 export interface FaqItem {
@@ -46,6 +47,12 @@ export const faq: FaqSection[] = [
         link: { to: '/collection', label: 'See the collection' },
       },
       {
+        id: 'kiaat',
+        question: 'What is Kiaat, and why is it used?',
+        answer:
+          'Kiaat (Pterocarpus angolensis) is a hardwood native to southern Africa, and one of the most prized furniture timbers on the continent. In South Africa it is a protected tree under the National Forests Act, and it grows slowly, taking decades to reach a size worth cutting. Each board is made from a wood that is genuinely scarce.\n\nIt is also one of the most stable woods there is. Kiaat shrinks very little as it dries and barely swells or shrinks afterwards, which is why it was traditionally chosen for canoes and paddles. For a board that means the joints stay tight as the seasons and the air around it change, wherever in the world it ends up.\n\nThe heartwood is naturally resistant to termites and wood borers, and it is hard enough to take years of checkers snapped down on it, harder than walnut or cherry. When the tree is cut it bleeds a deep red sap, which is why it is known as bloodwood. The grain runs from golden to reddish brown with darker, wavy streaks, so no two boards look alike, and it takes a fine polish under oil. In Zimbabwe the mbira, the traditional thumb piano, is carved from the same wood.',
+      },
+      {
         id: 'colours',
         question: 'Can I choose the colours of my board?',
         answer:
@@ -56,7 +63,7 @@ export const faq: FaqSection[] = [
         id: 'whats-included',
         question: 'What comes with a board?',
         answer:
-          'Every board comes with a pair of dice and thirty pieces, fifteen in each of its two colours. Every set is half wood and half resin, the resin poured to match the points. Heritage boards also come with one spare piece in each colour and a storage rail for the pieces.',
+          'Every board, Classic or Heritage, comes with a pair of dice and thirty pieces, fifteen in each of its two colours. Every set is half wood and half resin, the resin poured to match the points.\n\nHeritage boards only: one spare piece in each colour, and a storage rail for the pieces. The storage rail is not included with a Classic board.',
       },
       {
         id: 'spare-pieces',
@@ -68,7 +75,7 @@ export const faq: FaqSection[] = [
         id: 'size',
         question: 'How big is a board, open and closed?',
         answer:
-          'Closed, a board measures 465 × 265 × 70 mm, about the size of a slim briefcase. Open, it lies flat at 465 × 530 × 35 mm.',
+          'Classic: 465 × 265 × 70 mm closed, about the size of a slim briefcase. Open, it lies flat at 465 × 530 × 35 mm.\n\nHeritage: a larger board, 470 × 310 × 90 mm closed. Open, it lies flat at 470 × 625 × 45 mm.',
       },
       {
         id: 'care',
@@ -140,7 +147,7 @@ export const faq: FaqSection[] = [
         id: 'price',
         question: 'How much does a board cost?',
         answer:
-          'Classic boards are R8,700, with white and green or white and blue points, matching half-wood half-resin pieces and the Mavrikis Designs logo, in the standard size. Heritage boards are R11,600, made in your own colours with your own logo, with half-wood half-resin pieces to match, one spare piece in each colour and a storage rail. Signature boards are commissioned, such as wedding boards, full resin tables and river boards, so each one is quoted on request.',
+          'Prices are shared on request. Tell us which board you have in mind, Classic, Heritage or a Signature commission, and where it will be going, and we will send you a quote personally.',
         link: { to: '/waitlist', label: 'Ask for a quote' },
       },
       {
@@ -164,12 +171,13 @@ export const faq: FaqSection[] = [
       {
         id: 'delivery-sa',
         question: 'Do you deliver across South Africa?',
-        answer: null,
+        answer: 'Yes. Delivery anywhere in South Africa is free.',
       },
       {
         id: 'international',
         question: 'Do you ship outside South Africa?',
-        answer: null,
+        answer:
+          'Yes. International shipping is not included in the price of the board. It is quoted separately for your country, and any import duties or taxes are paid on arrival.',
       },
     ],
   },
